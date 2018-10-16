@@ -2,6 +2,7 @@
 
 var express = require("express");
 var fs = require("fs");
+var path = require("path");
 
 var router = express.Router();
 module.exports = router;
@@ -12,7 +13,6 @@ var presDir = CONFIG.presentationDirectory;
 
 router.route("/loadPres")
   .get(function(req, res) {
-	res.send("prensentation loading!");
 	var map = {};
 	fs.readdir(presDir, function (err, files){
 		if (err) {
@@ -27,7 +27,7 @@ router.route("/loadPres")
 		var nbrPres = 0;
 		var listPres = [];
 		for (var i = 0; i < files.length; i++) {
-			if (path.extname(data[i]) == ".json") {
+			if (path.extname(files[i]) == ".json") {
 				nbrPres += 1;
 				listPres.push(files[i]);
 			}
@@ -38,7 +38,7 @@ router.route("/loadPres")
 
 		var count = 0;
 		listPres.forEach(function(fileName){
-			console.log(fileName);
+			console.log("treating " + fileName);
 			fs.readFile(presDir + "/" + fileName, function(err, data) {
 				if (err) {
 					return console.log(err);
@@ -47,11 +47,9 @@ router.route("/loadPres")
 				var jsonObject = JSON.parse(data);
 				map[jsonObject.id] = jsonObject;
 				count += 1;
-
 				if (count == nbrPres){
 					console.log(map);
-					res.write(map);
-					res.end;
+					res.send(map);
 				}
 			})
 		})
