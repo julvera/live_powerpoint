@@ -27,8 +27,10 @@ router.route("/loadPres")
 		var nbrPres = 0;
 		var listPres = [];
 		for (var i = 0; i < files.length; i++) {
-			nbrPres += 1;
-			listPres.push(files[i]);
+			if (path.extname(data[i]) == ".json") {
+				nbrPres += 1;
+				listPres.push(files[i]);
+			}
 		}
 
 		console.log("nbr presentations: " + nbrPres);
