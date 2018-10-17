@@ -1,0 +1,31 @@
+{
+    "id": "0",
+    "title": "this is my presentation",
+    "description": "bla bla bla bla blabla",
+    "slidArray": [
+        {
+            "id": "1",
+            "title": "A",
+            "txt": "some txt here",
+            "content_id":"1"
+        },
+        {
+            "id": "2",
+            "title": "B",
+            "txt": " new slid no text",
+			"content_id":"2"
+        },
+        {
+            "id": "d5616d1f-f81d-4d4a-849a-1ee7148a50bd",
+            "title": "C",
+            "txt": " new slid no text",
+			"content_id":"3"
+        },
+        {
+            "id": "02cab34b-716d-47c5-8783-e1f6d5226ec6",
+            "title": "D",
+            "txt": "video here",
+            "content_id":"4"
+        }
+    ]
+}

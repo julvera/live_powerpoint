@@ -1,0 +1,29 @@
+{"temp":[{
+		"id":1,
+		"title":"content Title 1",
+		"type":"video",
+		"src":"https://www.youtube.com/embed/WjoDEQqyTig",
+		"onlyContent":false
+	  },
+	  {
+		"id":2,
+		"title":"content Title 2",
+		"type":"img_url",
+		"src":"http://zoywiki.com/images/6/68/LotS_Robot_Reindeer.png",
+		"onlyContent":true
+	  },
+	  {
+		"id":3,
+		"title":"content Title 3",
+		"type":"web",
+		"src":"http://www.roboware.me/#/",
+		"onlyContent":false
+	  },
+	  {
+		"id":4,
+		"title":"content Title 2",
+		"type":"video",
+		"src":"https://www.youtube.com/embed/7DmLkugdh9s",
+		"onlyContent":false
+	  }	]  
+}
