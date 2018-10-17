@@ -1,0 +1,29 @@
+{
+  "name": "asi2_live_powerpoint",
+  "version": "1.0.0",
+  "description": "Powerpoint-like presentation maker and dispatcher",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node testContentModel.js",
+    "start": "node app.js"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulienVera/live_powerpoint.git"
+  },
+  "keywords": [
+    "presentation"
+  ],
+  "author": "Julien Vera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulienVera/live_powerpoint/issues"
+  },
+  "homepage": "https://github.com/JulienVera/live_powerpoint#readme"
+}
