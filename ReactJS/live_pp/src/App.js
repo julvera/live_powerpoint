@@ -5,7 +5,7 @@ import Main from './components/mainPanel/Main.js';
 class App extends Component {
   render() {
     return (
-	    <div>
+	    <div> 
 	    	<Main/>
 	    </div>
     );
