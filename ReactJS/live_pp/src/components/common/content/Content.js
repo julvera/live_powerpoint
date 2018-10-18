@@ -6,7 +6,6 @@ class Content extends Component {
         super(props);
     }
 
-
     render() {
         let display_result = []
         display_result=this.props.slide_list.map(
@@ -16,7 +15,7 @@ class Content extends Component {
         return (
             <div>
                 {display_result}
-            </div>            
+            </div>
         );
     }
 }

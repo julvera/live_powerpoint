@@ -1,13 +1,18 @@
-{"slides": [{"id":1,
-"src":"http://zoywiki.com/images/6/68/LotS_Robot_Reindeer.png",
-"type":"img",
-"title":"First Title",
-"onlyContent":true
-},
-{"id":2,
-    "src":"http://zoywiki.com/images/6/68/LotS_Robot_Reindeer.png",
-    "type":"img",
-    "title":"First Title",
-    "onlyContent":false
-}]
+{
+    "slides": [
+        {
+            "id":1,
+            "src":"http://zoywiki.com/images/6/68/LotS_Robot_Reindeer.png",
+            "type":"img",
+            "title":"First Title",
+            "onlyContent":true
+        },
+        {
+            "id":2,
+            "src":"http://zoywiki.com/images/6/68/LotS_Robot_Reindeer.png",
+            "type":"img",
+            "title":"First Title",
+            "onlyContent":false
+        }
+    ]
 }
