@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tp2real.iml" filepath="$PROJECT_DIR$/tp2real.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tp2real-ear/tp2real-ear.iml" filepath="$PROJECT_DIR$/tp2real-ear/tp2real-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tp2real-ejb/tp2real-ejb.iml" filepath="$PROJECT_DIR$/tp2real-ejb/tp2real-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tp2real-web/tp2real-web.iml" filepath="$PROJECT_DIR$/tp2real-web/tp2real-web.iml" />
+    </modules>
+  </component>
+</project>

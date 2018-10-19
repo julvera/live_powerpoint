@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="tp2real-ejb:ejb">
+    <output-path>$PROJECT_DIR$/tp2real-ejb/target</output-path>
+    <root id="archive" name="tp2real-ejb.jar">
+      <element id="artifact" artifact-name="tp2real-ejb:ejb exploded" />
+    </root>
+  </artifact>
+</component>
