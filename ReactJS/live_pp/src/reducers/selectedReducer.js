@@ -1,0 +1,1 @@
+//Reducer mettant à jour les éléments sélectionnés

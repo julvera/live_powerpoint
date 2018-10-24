@@ -47,7 +47,7 @@ class Slid extends Component {
                     {this.state.txt}
                 </div>
                 <div className="height-30">
-                    <Content key={"Slid"+this.props.content_id} content={this.props.contentMap[this.props.content_id]} displayContentMode={"TypeOnly"}> </Content>
+                     <Content key={"Slid"+this.props.content_id} content={this.props.contentMap[this.props.content_id]} displayContentMode={"TypeOnly"}/>
                 </div>
                 <div>
                     {display_result}
