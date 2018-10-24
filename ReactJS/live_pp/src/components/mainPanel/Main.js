@@ -1,21 +1,43 @@
 import React from 'react';
+import '../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css';
+
 import './main.css';
-import Content from '../common/content/Content.js'
-import * as slidesJson from '../../data/contentMap.json';
+import BrowseContentPanel from '../browseContentPanel/components/BrowseContentPanel.js';
+import Slid from '../common/slid/components/Slid.js';
+import BrowsePresentationPanel from '../browsePresentationPanel/components/BrowsePresentationPanel.js'
+
+import * as contentJson from '../../data/contentMap.json';
+import * as presJson from '../../data/pres.json'
 
 export default class Main extends React.Component{
 	constructor(props) {
 		super(props);
-		let slideListTmp = slidesJson.temp;
-        this.state = {
-            slide_list: slideListTmp,
-        }; 
 	}
+
+
 	render() {
+
 		return (
-			<div>
-				<Content slide_list={this.state.slide_list}></Content>
+			<div className='container-fluid height-100'>
+				<div className="row height-100">
+					<div className='col-md-3 col-lg-3 height-100 vertical-scroll thumnail'>
+					<BrowsePresentationPanel presentation={presJson}
+									contentMap={contentJson}/>
+					</div>
+					<div className='col-md-6 col-lg-6 height-100 thumbnail'>
+						<Slid id="DisplaySlide" title="This is a title" 
+						txt="This is a text" content_id="2" 
+						contentMap={contentJson} displayMode="SHORT"/>
+					</div>
+					<div className='col-md-3 col-lg-3 height-100 vertical-scroll thumbnail'>
+						<BrowseContentPanel contentMap={contentJson}/>
+					</div>
+				</div>
 			</div>
 		);
 	}
 }
+
+
+
+				
