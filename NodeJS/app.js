@@ -24,7 +24,7 @@ app.use(prensentationRoute);
 app.use(function(request, response, cb) {
 	response.send("YO YO");
 	cb();
-})
+});
 
 app.use("/admin", express.static(path.join(__dirname, "public/admin")));
 app.use("/watch", express.static(path.join(__dirname, "public/watch")));
