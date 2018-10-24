@@ -1,7 +1,7 @@
 "use strict";
 
-let utils = require("../utils/utils.js");
-const data = new WeakMap();
+let fs = require("fs");
+const Utils = require("../utils/utils");
 
 
 class ContentModel {
@@ -12,42 +12,73 @@ class ContentModel {
         this.title = object.title;
         this.fileName = object.fileName;
         this.src = object.src;
-        this.setData(object.data);
+
+        var data;
+        this.setData = function (newData) {
+            data = newData;
+        };
+        this.getData = function () {
+            return data;
+        };
     }
 
-    getData () { return data.get(this); }
-
-    setData (newData) { data.set(this, newData); }
-
     static create (content, callback) {
-        console.log("create new file");
-
-        if (content.type === "img") {
-            utils.createFile(content.fileName, content.getData(), callback);
-            console.log("CREATED " + fileName);
+        if (content === null
+            || content.id === null
+            || Object.getPrototypeOf(content) !== ContentModel.prototype) {
+            return callback(new Error("Why the F would you do that?? (create)"));
         }
-        utils.createFile(content.id + ".meta.json", JSON.stringify(content), callback);
-        callback();
+        console.log("############## Object !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + content);
+        console.log("############## Object !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + content.getData());
+
+        if (content.getData().length > 0) {
+            Utils.createContentFile(content, function (err, data) {
+                return callback(err, data);
+            });
+        } else {
+            Utils.createMetadataFile(content, function (err, data) {
+                return callback(err, data);
+            });
+        }
     }
 
     static read (id, callback) {
-        console.log("read file id : " + id);
-        let content = utils.readFile(id + ".meta.json", callback);
-        callback(null, content);
+        if (id === null) {
+            return callback(new Error("Why the F would you do that?? (read)"));
+        }
+
+        Utils.readFile(id + ".meta.json", function (err, data) {
+            if (err) {return callback(err, data);}
+
+            let content = new ContentModel(data);
+            content.setData(data.getData);
+            callback(null, content);
+        });
     }
 
     static update (content, callback) {
-        if (content.type === "img" && !!content.data && content.data.length > 0) {
-            utils.createFile(content.fileName, content.getData(), callback);
-            console.log("UPDATED " + content.fileName);
-        }
-        utils.createFile(content.id + ".meta.json", JSON.stringify(content), callback);
-        console.log("UPDATED " + content.id + ".meta.json");
-        callback();
+        this.read(content.id, function (err, data) {
+            if (err) {return callback(err, data)}
+
+            console.log("#################### data !!!!!!!!!!!!!!!!!!!!!!!!!" + data);
+            console.log("########################################" + JSON.stringify(data));
+            ContentModel.create(JSON.stringify(data), callback);
+        })
     }
 
-    delete (id, callback) {
+    static delete (id, callback) {
+        if (id === null) {
+            return callback(new Error("Why the F would you do that?? (delete)"));
+        }
 
+        fs.readFile(Utils.getMetaFilePath(id), 'utf8', function(err, data) {
+            if (err) {
+                console.log(err.message);
+                return callback(err);
+            }
+
+            Utils.unlinkFiles(JSON.parse(data), id, callback);
+        });
     }
 }
 

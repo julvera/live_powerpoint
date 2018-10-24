@@ -32,7 +32,6 @@ router.route("/loadPres")
 					let jsonObject = JSON.parse(data);
 					map[jsonObject.id] = jsonObject;
 					if (listPres.length === Object.keys(map).length){
-						console.log(map);
 						res.send(map);
 					}
 				})

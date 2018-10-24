@@ -1,10 +1,16 @@
 "use strict";
 
-var express = require("express");
-var router = express.Router();
+let multer = require("multer");
+
+let express = require("express");
+let router = express.Router();
 module.exports = router;
 
-router.route("/")
-  .get(function(req, res) {
-	res.send("content Works!");
-  })
+const multerMiddleware = multer({ "dest": "/tmp/" });
+const contentController = require('./../controllers/content.controller');
+
+
+router.route("/contents")
+    .get(contentController.list)
+    .post(multerMiddleware.single("file"), contentController.create);
+
