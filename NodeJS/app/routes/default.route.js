@@ -5,6 +5,6 @@ var router = express.Router();
 module.exports = router;
 
 router.route("/")
-  .get(function(req, res) {
-	res.send("It Works!");
-  })
+    .get(function(req, res) {
+        res.send("It Works!");
+    });
