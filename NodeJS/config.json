@@ -1,5 +1,5 @@
 {
   "port": 1337,
-  "contentDirectory": "./content",
-  "presentationDirectory": "./presentation"
+  "contentDirectory": "/Users/jvera/school/projects/5A/jvera/live_powerpoint/NodeJS/content",
+  "presentationDirectory": "/Users/jvera/school/projects/5A/jvera/live_powerpoint/NodeJS/presentation"
 }

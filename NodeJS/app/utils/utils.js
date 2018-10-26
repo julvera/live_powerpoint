@@ -1,8 +1,8 @@
 "use strict";
 
-let fs = require("fs");
-let path = require("path");
-let CONFIG = JSON.parse(process.env.CONFIG);
+const fs = require("fs");
+const path = require("path");
+const CONFIG = JSON.parse(process.env.CONFIG);
 
 
 class Utils {
@@ -15,7 +15,7 @@ class Utils {
                 return cb(err);
             }
 
-            cb(null, Utils.createMetadataFile(content, cb));
+            Utils.createMetadataFile(content, cb);
         });
     };
 
@@ -100,6 +100,42 @@ class Utils {
     static getNewFileName (id, originalFileName) {
         return id + '.' + originalFileName.split('.').pop();
     };
+
+    static listDirFiles(dir, res) {
+        let map = {};
+        fs.readdir(dir, function (err, files) {
+            if (err) {
+                return Utils.handle_500_err(res, err);
+            }
+
+            let listPres = [];
+            for (let i = 0; i < files.length; i++) {
+                if (path.extname(files[i]) === ".json") {
+                    listPres.push(files[i]);
+                }
+            }
+
+            listPres.forEach(function (fileName) {
+                fs.readFile(path.join(dir, fileName), function (err, data) {
+                    if (err) {
+                        return console.log(err);
+                    }
+
+                    let jsonObject = JSON.parse(data);
+                    map[jsonObject.id] = jsonObject;
+                    if (listPres.length === Object.keys(map).length) {
+                        res.json(map);
+                        res.end();
+                    }
+                })
+            })
+        })
+    }
+
+    static handle_500_err (res, err) {
+        console.error(err);
+        return res.status(500).end(err.message);
+    }
 }
 
 module.exports = Utils;

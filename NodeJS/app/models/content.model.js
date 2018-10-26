@@ -28,7 +28,7 @@ class ContentModel {
             return callback(new Error("Why the F would you do that?? (create)"));
         }
 
-        if (content.getData().length > 0) {
+        if (content.getData() !== null) {
             Utils.createContentFile(content, function (err, data) {
                 return callback(err, data);
             });

@@ -7,6 +7,7 @@ const express = require("express");
 const http = require("http");
 const path = require("path");
 const defaultRoute = require("./app/routes/default.route.js");
+const IOController = require("./app/controllers/io.controller.js");
 
 const contentRoute = require("./app/routes/content.route.js");
 const prensentationRoute = require("./app/routes/presentation.route.js");
@@ -26,3 +27,4 @@ server.listen(CONFIG.port, () => {
     const port = server.address().port;
     console.log("serving on http://%s:%s", host, port);
 });
+IOController.listen(server);

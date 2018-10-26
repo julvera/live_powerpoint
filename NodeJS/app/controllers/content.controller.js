@@ -1,49 +1,59 @@
 "use strict";
 
-const CONFIG = require("./config.json");
-const path = require("path");
 const fs = require("fs");
+const Utils = require("../utils/utils");
 
-model.exports = ContentController;
+const contentDir = JSON.parse(process.env.CONFIG).contentDirectory;
+let ContentModel = require("../models/content.model");
+let ControllerUtils = require("../utils/controller_utils");
+
 
 class ContentController {
-    static list (req, res, next) {
+
+    static list(req, res) {
         console.log("content.controller.list");
-        var final_json = {};
-        fs.readdir(CONFIG.contentDirectory, function(err, data) {
-            if (!!err) {
-                console.log(err);
-                res.status(500).end(err.message);
-                return err;
-            }
-            var listFile = [];
-            data.forEach(function(filename) {
-                if (path.extname(filename) === ".json") {
-                    listFile.push(filename)
-                }
+        Utils.listDirFiles(contentDir, res);
+    }
+
+    static create(req, res) {
+        console.log("content.controller.create");
+
+        let content = new ContentModel({
+            id: Utils.generateUUID(),
+            type: req.body['type'],
+            title: req.body['title']
+        });
+
+        if (content['type'] === 'img') {
+            fs.readFile(req.file.path, function (err, data) {
+                if (err) {return Utils.handle_500_err(res, err);}
+
+                content.setData(data);
+                content.src = '/contents/' + content.id;
+                content.fileName = Utils.getNewFileName(content.id, req.file.originalname);
+                return ControllerUtils.handleContentModelCreate(res, content);
             });
-            listFile.forEach(function(filename) {
-                fs.readFile(utils.getDataFilePath(filename), function(err, content) {
-                    if (err) {
-                        console.log(err);
-                        res.status(500).end(err.message);
-                        return err;
-                    }
-                    final_json[JSON.parse(content)['id']] = new ContentModel(JSON.parse(content));
-                    if (Object.keys(final_json).length === listFile.length) {
-                        res.send(final_json);
-                    }
-                });
-            })
-
-        })
+        } else {
+            content.src = req.body['src'];
+            return ControllerUtils.handleContentModelCreate(res, content);
+        }
     }
 
-    static create () {
+    static read(req, res) {
+        console.log("content.controller.read");
+        ContentModel.read(req.contentId, function(err, content) {
+            if (err) {return Utils.handle_500_err(res, err);}
 
-    }
-
-    static read () {
-
+            if (req.query.json === "true") {
+                return res.send(content);
+            }
+            if (content.type === "img") {
+                // console.log(fs.realpathSync(Utils.getDataFilePath(content.fileName)));
+                return res.sendFile(Utils.getDataFilePath(content.fileName));
+            }
+            res.redirect(content.src);
+        });
     }
 }
+
+module.exports = ContentController;
