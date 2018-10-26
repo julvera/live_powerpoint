@@ -1,19 +1,18 @@
 "use strict";
 
-let fs = require("fs");
 const Utils = require("../utils/utils");
 
 
 class ContentModel {
 
-    constructor (object) {
-        this.id = object.id;
-        this.type = object.type;
-        this.title = object.title;
-        this.fileName = object.fileName;
-        this.src = object.src;
+    constructor ({id, type, title, fileName, src}) {
+        this.id = id;
+        this.type = type;
+        this.title = title;
+        this.fileName = fileName;
+        this.src = src;
 
-        var data;
+        var data = null;
         this.setData = function (newData) {
             data = newData;
         };
@@ -24,12 +23,10 @@ class ContentModel {
 
     static create (content, callback) {
         if (content === null
-            || content.id === null
-            || Object.getPrototypeOf(content) !== ContentModel.prototype) {
+        || content.id === null
+        || !(content instanceof ContentModel)) {
             return callback(new Error("Why the F would you do that?? (create)"));
         }
-        console.log("############## Object !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + content);
-        console.log("############## Object !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + content.getData());
 
         if (content.getData().length > 0) {
             Utils.createContentFile(content, function (err, data) {
@@ -47,22 +44,22 @@ class ContentModel {
             return callback(new Error("Why the F would you do that?? (read)"));
         }
 
-        Utils.readFile(id + ".meta.json", function (err, data) {
+        Utils.readFileIfExists(Utils.getMetaFilePath(id), function (err, data) {
             if (err) {return callback(err, data);}
 
-            let content = new ContentModel(data);
-            content.setData(data.getData);
-            callback(null, content);
+            callback(null, new ContentModel(JSON.parse(data.toString())));
         });
     }
 
     static update (content, callback) {
-        this.read(content.id, function (err, data) {
+        ContentModel.read(content.id, function (err, data) {
             if (err) {return callback(err, data)}
 
-            console.log("#################### data !!!!!!!!!!!!!!!!!!!!!!!!!" + data);
-            console.log("########################################" + JSON.stringify(data));
-            ContentModel.create(JSON.stringify(data), callback);
+            ContentModel.create(content, function (err, data) {
+                if (err) {return callback(err, data);}
+
+                callback(null, content);
+            });
         })
     }
 
@@ -71,7 +68,7 @@ class ContentModel {
             return callback(new Error("Why the F would you do that?? (delete)"));
         }
 
-        fs.readFile(Utils.getMetaFilePath(id), 'utf8', function(err, data) {
+        Utils.readFileIfExists(Utils.getMetaFilePath(id), function(err, data) {
             if (err) {
                 console.log(err.message);
                 return callback(err);

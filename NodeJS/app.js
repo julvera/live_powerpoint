@@ -1,30 +1,28 @@
-'use strict'
+'use strict';
 
-var express = require("express");
-var app = express();
-var http = require("http");
-var path = require("path");
-var CONFIG = require("./config.json");
+const CONFIG = require("./config.json");
 process.env.CONFIG = JSON.stringify(CONFIG);
 
-var server = http.createServer(app);
-server.listen(CONFIG.port);
+const express = require("express");
+const http = require("http");
+const path = require("path");
+const defaultRoute = require("./app/routes/default.route.js");
 
-var host = server.address().address;
-var port = server.address().port;
-console.log("serving on http://%s:%s", host, port);
+const contentRoute = require("./app/routes/content.route.js");
+const prensentationRoute = require("./app/routes/presentation.route.js");
 
-var defaultRoute = require("./app/routes/default.route.js");
-var contentRoute = require("./app/routes/content.route.js");
-var prensentationRoute = require("./app/routes/presentation.route.js");
+const app = express();
+const server = http.createServer(app);
+
 app.use(defaultRoute);
 app.use(contentRoute);
 app.use(prensentationRoute);
 
-app.use(function(request, response, cb) {
-	response.send("YO YO");
-	cb();
-});
-
 app.use("/admin", express.static(path.join(__dirname, "public/admin")));
 app.use("/watch", express.static(path.join(__dirname, "public/watch")));
+
+server.listen(CONFIG.port, () => {
+    const host = server.address().address;
+    const port = server.address().port;
+    console.log("serving on http://%s:%s", host, port);
+});

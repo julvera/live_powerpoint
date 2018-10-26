@@ -26,13 +26,14 @@ router.route("/loadPres")
 			}
 
 			listPres.forEach(function(fileName){
-				fs.readFile(presDir + "/" + fileName, function(err, data) {
+				fs.readFile(path.join(presDir, fileName), function(err, data) {
 					if (err) {return console.log(err);}
 
 					let jsonObject = JSON.parse(data);
 					map[jsonObject.id] = jsonObject;
 					if (listPres.length === Object.keys(map).length){
-						res.send(map);
+						res.json(map);
+						res.end();
 					}
 				})
 			})
@@ -42,15 +43,21 @@ router.route("/loadPres")
 
 router.route("/savePres")
 	.post(function(req, res) {
+		let data = "";
 		req.on("data", function (chunk) {
-			let jsonObject = JSON.parse(chunk);
-            let filePath = presDir + "/" + jsonObject.id + ".pres.json";
+            data += chunk.toString();
+        });
 
-			fs.writeFile(filePath, JSON.stringify(jsonObject), "utf8", function (err) {
-			    if (err) {console.log("shit Happened");}
+		req.on("end", () => {
+            let jsonObject = JSON.parse(data);
+            let filePath = path.join(presDir, jsonObject.id + ".pres.json");
 
-			    res.send("File successfully saved!");
-            })
+            fs.writeFile(filePath, JSON.stringify(jsonObject), "utf8", function (err) {
+                if (err) {console.log("shit Happened");}
+
+                res.end("File successfully saved!");
+            });
 		});
+
 	}
 );
