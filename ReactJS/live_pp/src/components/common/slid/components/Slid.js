@@ -2,29 +2,47 @@ import React, { Component } from 'react';
 import Content from '../../content/components/Content.js'
 import EditMetaSlid from '../containers/EditMetaSlid.js'
 
+import { connect } from 'react-redux';
+import {setSelectedSlid, updateSlid } from '../../../../actions'
+
+
 class Slid extends Component {
     constructor(props) {
         super(props);
         //List of var entry
         this.state = {
-            //id: this.props.id,
             title: this.props.title,
             txt: this.props.txt,
-            //content_id: this.props.content_id,
-            //contentMap: this.props.contentMap,
-            //displaymode : this.props.displayMode,
         };
         this.handleChangeTitle=this.handleChangeTitle.bind(this);
         this.handleChangeTxt=this.handleChangeTxt.bind(this);
+        this.updateSelectedSlid=this.updateSelectedSlid.bind(this);
     }
 
-    handleChangeTitle(e){
-        this.setState({title:e.target.value});
+    updateCurrentSlid(id, title,txt,content_id){
+        const tmpSlid={id:id,
+                    title:title,
+                    txt:txt,
+                    content_id:content_id};
+       this.props.dispatch(updateSlid(tmpSlid));
+    }
+
+    handleChangeTitle(e){   
+        this.updateCurrentSlid(this.props.id,e.target.value,this.props.txt,this.props.content_id)
     }
 
     handleChangeTxt(e){
-        this.setState({txt:e.target.value});
+        this.updateCurrentSlid(this.props.id,this.props.title,e.target.value,this.props.content_id)
     }
+
+    updateSelectedSlid(){
+        const tmpSlid={id:this.props.id,
+                    title:this.props.title,
+                    txt:this.props.txt,
+                    content_id:this.props.content_id};
+       this.props.dispatch(setSelectedSlid(tmpSlid));
+    }
+       
 
     render() {
 
@@ -33,21 +51,24 @@ class Slid extends Component {
             display_result.push(<EditMetaSlid key={this.props.id} 
                                 handleChangeTitle={this.handleChangeTitle} 
                                 handleChangeTxt={this.handleChangeTxt}
-                                title={this.state.title}
-                                txt={this.state.txt}></EditMetaSlid>)
+                                title={this.props.title}
+                                txt={this.props.txt}></EditMetaSlid>)
         }
                 
-        
+        console.log("content map")
+        console.log(this.props.content_map)
         return (
-            <div className ="align-center height-30">
+            <div className ="align-center height-30" onClick={()=>{this.updateSelectedSlid()}}>
                 <div>
-                    {this.state.title}
+                    {this.props.title}
                 </div>
                 <div>
-                    {this.state.txt}
+                    {this.props.txt}
                 </div>
                 <div className="height-30">
-                     <Content key={"Slid"+this.props.content_id} content={this.props.contentMap[this.props.content_id]} displayContentMode={"TypeOnly"}/>
+                     <Content key={"Slid"+this.props.content_id} 
+                            content={this.props.content_map[this.props.content_id]} 
+                            displayContentMode={"TypeOnly"}/>
                 </div>
                 <div>
                     {display_result}
@@ -57,4 +78,9 @@ class Slid extends Component {
     }
 }
 
-export default Slid;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        content_map: state.updateModelReducer.content_map,
+    } };
+
+export default connect(mapStateToProps)(Slid);

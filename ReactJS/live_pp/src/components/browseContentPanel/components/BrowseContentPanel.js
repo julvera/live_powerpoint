@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Content from '../../common/content/components/Content.js'
 import './BrowseContentPanel.css'
+import { connect } from 'react-redux';
+
 
 class BrowseContentPanel extends Component {
     constructor(props) {
@@ -10,8 +12,8 @@ class BrowseContentPanel extends Component {
     render() {
 
         let display_result = []
-		for(let contents in this.props.contentMap){
-			display_result.push(<Content key={contents} content={this.props.contentMap[contents]} displayContentMode={'Full'}> </Content>)
+		for(let contents in this.props.content_map){
+			display_result.push(<Content key={contents} content={this.props.content_map[contents]} displayContentMode={'Full'}> </Content>)
         }
         
         return (
@@ -24,5 +26,10 @@ class BrowseContentPanel extends Component {
         );
     }
 }
+const mapStateToProps = (state, ownProps) => {
+    return {
+        content_map: state.updateModelReducer.content_map,
+    } };
 
-export default BrowseContentPanel;
+
+export default connect(mapStateToProps)(BrowseContentPanel);

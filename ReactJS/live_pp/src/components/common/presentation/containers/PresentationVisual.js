@@ -9,7 +9,6 @@ class PresentationVisual extends Component {
             title: this.props.title,
             description: this.props.description,
             slidArray: this.props.slidArray,
-            contentMap: this.props.contentMap
         }
     }
 
@@ -21,7 +20,8 @@ class PresentationVisual extends Component {
                 <h3>Description</h3>
                 {this.props.description}
                 <div>
-                <SlidList key={"SlidList" + this.props.id} contentMap={this.props.contentMap} slidArray={this.props.slidArray}></SlidList>
+                <SlidList key={"SlidList" + this.props.id} 
+                        slidArray={this.props.slidArray}/>
                 </div>
             </div>
         );
