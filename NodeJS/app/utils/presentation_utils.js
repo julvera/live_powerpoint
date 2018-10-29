@@ -3,13 +3,40 @@
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
-const Utils = require("./utils");
 
 
 class PresentationUtils {
 
     static listDirFiles(dir, res) {
-        Utils.listDirFiles(dir, res)
+        let map = {};
+        fs.readdir(dir, function (err, files) {
+            if (err) {
+                console.error(err);
+                return res.status(500).end(err.message);
+            }
+
+            let listPres = [];
+            for (let i = 0; i < files.length; i++) {
+                if (path.extname(files[i]) === ".json") {
+                    listPres.push(files[i]);
+                }
+            }
+
+            listPres.forEach(function (fileName) {
+                fs.readFile(path.join(dir, fileName), function (err, data) {
+                    if (err) {
+                        return console.log(err);
+                    }
+
+                    let jsonObject = JSON.parse(data);
+                    map[jsonObject.id] = jsonObject;
+                    if (listPres.length === Object.keys(map).length) {
+                        res.json(map);
+                        res.end();
+                    }
+                })
+            })
+        })
     }
 
     static saveNewPres(dir, req, res) {

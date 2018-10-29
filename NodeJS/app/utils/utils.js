@@ -101,37 +101,6 @@ class Utils {
         return id + '.' + originalFileName.split('.').pop();
     };
 
-    static listDirFiles(dir, res) {
-        let map = {};
-        fs.readdir(dir, function (err, files) {
-            if (err) {
-                return Utils.handle_500_err(res, err);
-            }
-
-            let listPres = [];
-            for (let i = 0; i < files.length; i++) {
-                if (path.extname(files[i]) === ".json") {
-                    listPres.push(files[i]);
-                }
-            }
-
-            listPres.forEach(function (fileName) {
-                fs.readFile(path.join(dir, fileName), function (err, data) {
-                    if (err) {
-                        return console.log(err);
-                    }
-
-                    let jsonObject = JSON.parse(data);
-                    map[jsonObject.id] = jsonObject;
-                    if (listPres.length === Object.keys(map).length) {
-                        res.json(map);
-                        res.end();
-                    }
-                })
-            })
-        })
-    }
-
     static handle_500_err (res, err) {
         console.error(err);
         return res.status(500).end(err.message);

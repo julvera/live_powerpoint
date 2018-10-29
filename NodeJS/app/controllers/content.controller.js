@@ -2,17 +2,18 @@
 
 const fs = require("fs");
 const Utils = require("../utils/utils");
+const PresUtils = require("../utils/presentation_utils");
+
 
 const contentDir = JSON.parse(process.env.CONFIG).contentDirectory;
-let ContentModel = require("../models/content.model");
-let ControllerUtils = require("../utils/controller_utils");
+const ContentModel = require("../models/content.model");
 
 
 class ContentController {
 
     static list(req, res) {
         console.log("content.controller.list");
-        Utils.listDirFiles(contentDir, res);
+        PresUtils.listDirFiles(contentDir, res);
     }
 
     static create(req, res) {
@@ -24,18 +25,18 @@ class ContentController {
             title: req.body['title']
         });
 
-        if (content['type'] === 'img') {
+        if (content.type === 'img') {
             fs.readFile(req.file.path, function (err, data) {
                 if (err) {return Utils.handle_500_err(res, err);}
 
                 content.setData(data);
                 content.src = '/contents/' + content.id;
                 content.fileName = Utils.getNewFileName(content.id, req.file.originalname);
-                return ControllerUtils.handleContentModelCreate(res, content);
+                return handleContentModelCreate(res, content);
             });
         } else {
             content.src = req.body['src'];
-            return ControllerUtils.handleContentModelCreate(res, content);
+            return handleContentModelCreate(res, content);
         }
     }
 
@@ -48,12 +49,20 @@ class ContentController {
                 return res.send(content);
             }
             if (content.type === "img") {
-                // console.log(fs.realpathSync(Utils.getDataFilePath(content.fileName)));
                 return res.sendFile(Utils.getDataFilePath(content.fileName));
             }
             res.redirect(content.src);
         });
     }
+}
+
+function handleContentModelCreate(res, content) {
+    ContentModel.create(content, function (err) {
+        if (err) {return Utils.handle_500_err(res, err);}
+
+        res.json(JSON.stringify(content));
+        res.end();
+    });
 }
 
 module.exports = ContentController;

@@ -25,7 +25,7 @@ class ContentModel {
         if (content === null
         || content.id === null
         || !(content instanceof ContentModel)) {
-            return callback(new Error("Why the F would you do that?? (create)"));
+            return callback(new Error("Why the F would you create some broken shit ??"));
         }
 
         if (content.getData() !== null) {
@@ -41,7 +41,7 @@ class ContentModel {
 
     static read (id, callback) {
         if (id === null) {
-            return callback(new Error("Why the F would you do that?? (read)"));
+            return callback(new Error("Why the F would you give a null id to read ??"));
         }
 
         Utils.readFileIfExists(Utils.getMetaFilePath(id), function (err, data) {
@@ -65,7 +65,7 @@ class ContentModel {
 
     static delete (id, callback) {
         if (id === null) {
-            return callback(new Error("Why the F would you do that?? (delete)"));
+            return callback(new Error("Why the F would you give a null id to delete ??"));
         }
 
         Utils.readFileIfExists(Utils.getMetaFilePath(id), function(err, data) {
