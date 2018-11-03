@@ -21,21 +21,21 @@ class ContentController {
 
         let content = new ContentModel({
             id: Utils.generateUUID(),
-            type: req.body['type'],
-            title: req.body['title']
+            type: req.body["type"],
+            title: req.body["title"]
         });
 
-        if (content.type === 'img') {
+        if (content.type === "img") {
             fs.readFile(req.file.path, function (err, data) {
                 if (err) {return Utils.handle_500_err(res, err);}
 
                 content.setData(data);
-                content.src = '/contents/' + content.id;
+                content.src = "/contents/" + content.id;
                 content.fileName = Utils.getNewFileName(content.id, req.file.originalname);
                 return handleContentModelCreate(res, content);
             });
         } else {
-            content.src = req.body['src'];
+            content.src = req.body["src"];
             return handleContentModelCreate(res, content);
         }
     }

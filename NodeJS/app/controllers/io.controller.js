@@ -4,65 +4,94 @@ const ContentModel = require("../models/content.model.js");
 const PresentationUtils = require("../utils/presentation_utils");
 
 module.exports = this;
-let socket_map = {};
+
+let socketMap = {};
+let presId;
+let currentSlide;
+let lastSlide;
 
 
 class IOController {
 
     static listen (server) {
-        const io = require('socket.io').listen(server);
-
         console.log("io.controller.listen");
 
-        io.sockets.on('connection', function (socket) {
-            console.log('Un client est connecté !');
+        const io = require("socket.io").listen(server);
+        io.sockets.on("connection", function (socket) {
+            console.log("Un client est connecté !");
 
-            socket.on('data_comm', function (id) {
-                console.log('io.controller.data_comm');
-                socket_map[id] = socket;
-                console.log("New watcher : " + socket.id);
-                console.log("Or maybe: " + id);
+            socket.on("data_comm", function (id) {
+                console.log("io.controller.data_comm");
+                socketMap[id] = socket;
+                console.log("New watcher : " + id);
             });
 
-            socket.on('slidEvent', function (json_object) {
-                console.log('io.controller.slidEvent');
+            socket.on("slidEvent", function (json_event) {
+                console.log("io.controller.slidEvent");
 
-                if (json_object['CMD'] === "START") {
+                if (json_event.CMD === "START") {
                     console.log("CMD is START");
+                    presId = json_event.PRES_ID;
+                    currentSlide = 0;
+                } else {
+                    currentSlide = handleCMD(json_event["CMD"]);
                 }
-                else {
-                    console.log(json_object['CMD']);
-                    switch (json_object['CMD']) {
-                        case "BEGIN":
-                            console.log("in Begin !");
-                            break;
-                        case "NEXT":
-                            console.log("in next !");
-                            break;
-                        case "PREV":
-                            console.log("in prev !");
-                            break;
-                        case "END":
-                            console.log("in end !");
-                            break;
-                        default :
-                            return;
-                    }
-                }
+                loadSlide();
             });
-            // PresentationUtils.loadPres(function (res) {
-            //     ContentModel.read(something, function (err, content) {
-            //         if (!!err) {
-            //             console.log(err);
-            //             return err;
-            //         }
-            //
-            //     });
-            // });
-
-            socket.emit('connection');
+            socket.emit("connection");
         });
     }
+}
+
+/** Read all presentation with /loadPres web service */
+function loadSlide () {
+    PresentationUtils.loadPres(function (res) {
+        lastSlide = res[presId]["slidArray"].length;
+        let slideInfo = res[presId]["slidArray"][currentSlide];
+
+        ContentModel.read(slideInfo["id"], function (err, content) {
+            if (err) {console.log(err); return err;}
+
+            for (let element in socketMap) {
+                socketMap[element].emit("currentSlidEvent", {
+                    "content_src": content.src,
+                    "content_type": content.type,
+                    "content_title": content.title,
+                    "title": slideInfo["title"],
+                    "description": slideInfo["txt"]
+                });
+            }
+        });
+    })
+}
+
+/** Determine next slide's id according to the given command */
+function handleCMD (cmd) {
+    console.log(cmd);
+    let nextSlide;
+
+    switch (cmd) {
+        case "NEXT":
+            console.log("in next !");
+            if (currentSlide < lastSlide) {
+                nextSlide = currentSlide + 1;
+            }
+            break;
+        case "PREV":
+            console.log("in prev !");
+            if (currentSlide > 0) {
+                nextSlide = currentSlide - 1;
+            }
+            break;
+        case "END":
+            console.log("in end !");
+            nextSlide = lastSlide;
+            break;
+        default :
+            nextSlide = 0; //"BEGIN" and other tentatives
+            return;
+    }
+    return nextSlide;
 }
 
 module.exports = IOController;

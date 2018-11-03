@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const CONFIG = require("./config.json");
 process.env.CONFIG = JSON.stringify(CONFIG);
