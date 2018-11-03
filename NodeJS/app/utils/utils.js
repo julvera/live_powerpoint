@@ -10,10 +10,7 @@ class Utils {
     static createContentFile (content, cb) {
         let filePath = Utils.getDataFilePath(content.fileName);
         fs.writeFile(filePath, content.getData(), "utf8", function(err) {
-            if (err) {
-                console.error(err);
-                return cb(err);
-            }
+            if (err) {console.error(err); return cb(err);}
 
             Utils.createMetadataFile(content, cb);
         });
@@ -22,10 +19,7 @@ class Utils {
     static createMetadataFile (content, cb) {
         let filePath = Utils.getMetaFilePath(content.id);
         fs.writeFile(filePath, JSON.stringify(content), "utf8", function(err) {
-            if (err) {
-                console.error(err);
-                return cb(err);
-            }
+            if (err) {console.error(err); return cb(err);}
 
             return cb();
         });
@@ -33,15 +27,11 @@ class Utils {
 
     static unlinkFiles (obj, id, callback) {
         fs.unlink(Utils.getMetaFilePath(id), function(err) {
-            if (err) {
-                console.error(err);
-                return callback(err);
-            }
+            if (err) {console.error(err); return callback(err);}
+
             fs.unlink(Utils.getDataFilePath(obj.fileName), function(err) {
-                if (err) {
-                    console.error(err);
-                    return callback(err);
-                }
+                if (err) {console.error(err); return callback(err);}
+
                 callback();
             });
         });
@@ -49,10 +39,7 @@ class Utils {
 
     static readFile (fileName, cb) {
         fs.readFile(path.join(CONFIG.contentDirectory, fileName), "utf8", function(err, data) {
-            if (err) {
-                console.error(err);
-                return cb(err);
-            }
+            if (err) {console.error(err); return cb(err);}
 
             cb(null, JSON.parse(data));
         });
