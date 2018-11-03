@@ -34,9 +34,9 @@ class IOController {
                     presId = json_event.PRES_ID;
                     currentSlide = 0;
                 } else {
-                    currentSlide = handleCMD(json_event["CMD"]);
+                    currentSlide = HandleCMD(json_event.CMD);
                 }
-                loadSlide();
+                LoadSlide();
             });
             socket.emit("connection");
         });
@@ -44,12 +44,12 @@ class IOController {
 }
 
 /** Read all presentation with /loadPres web service */
-function loadSlide () {
+function LoadSlide () {
     PresentationUtils.loadPres(function (res) {
         lastSlide = res[presId]["slidArray"].length;
         let slideInfo = res[presId]["slidArray"][currentSlide];
 
-        ContentModel.read(slideInfo["id"], function (err, content) {
+        ContentModel.read(slideInfo.id, function (err, content) {
             if (err) {console.log(err); return err;}
 
             for (let element in socketMap) {
@@ -57,8 +57,8 @@ function loadSlide () {
                     "content_src": content.src,
                     "content_type": content.type,
                     "content_title": content.title,
-                    "title": slideInfo["title"],
-                    "description": slideInfo["txt"]
+                    "title": slideInfo.title,
+                    "description": slideInfo.txt
                 });
             }
         });
@@ -66,7 +66,7 @@ function loadSlide () {
 }
 
 /** Determine next slide's id according to the given command */
-function handleCMD (cmd) {
+function HandleCMD (cmd) {
     console.log(cmd);
     let nextSlide;
 
