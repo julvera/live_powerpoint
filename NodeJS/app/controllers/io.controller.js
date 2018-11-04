@@ -9,6 +9,7 @@ let socketMap = {};
 let presId;
 let currentSlide;
 let lastSlide;
+let doLoad;
 
 
 class IOController {
@@ -18,26 +19,28 @@ class IOController {
 
         const io = require("socket.io").listen(server);
         io.sockets.on("connection", function (socket) {
-            console.log("Un client est connecté !");
-
             socket.on("data_comm", function (id) {
                 console.log("io.controller.data_comm");
                 socketMap[id] = socket;
-                console.log("New watcher : " + id);
+                console.log("New watcher: " + id);
             });
 
             socket.on("slidEvent", function (json_event) {
                 console.log("io.controller.slidEvent");
 
-                if (json_event.CMD === "START") {
-                    console.log("CMD is START");
-                    presId = json_event.PRES_ID;
-                    currentSlide = 0;
-                } else {
-                    currentSlide = HandleCMD(json_event.CMD);
+                currentSlide = HandleCMD(json_event);
+
+                console.log("presId: " + presId);
+                if(presId !== undefined && doLoad) {
+                    LoadSlide();
                 }
-                LoadSlide();
             });
+
+            socket.on("disconnect", function() {
+                //This is pretty magic, called by the web browser itself
+                delete socketMap[socket.id];
+            });
+
             socket.emit("connection");
         });
     }
@@ -47,13 +50,14 @@ class IOController {
 function LoadSlide () {
     PresentationUtils.loadPres(function (res) {
         lastSlide = res[presId]["slidArray"].length;
-        let slideInfo = res[presId]["slidArray"][currentSlide];
+        let slideInfo = res[presId]["slidArray"][currentSlide - 1]; //indexes
 
         ContentModel.read(slideInfo.id, function (err, content) {
             if (err) {console.log(err); return err;}
 
-            for (let element in socketMap) {
-                socketMap[element].emit("currentSlidEvent", {
+            for (let socketId in socketMap) {
+                console.log("Emitting to: " + socketId);
+                socketMap[socketId].emit("currentSlidEvent", {
                     "content_src": content.src,
                     "content_type": content.type,
                     "content_title": content.title,
@@ -66,30 +70,36 @@ function LoadSlide () {
 }
 
 /** Determine next slide's id according to the given command */
-function HandleCMD (cmd) {
-    console.log(cmd);
-    let nextSlide;
+function HandleCMD (json_event) {
+    console.log(json_event.CMD);
+    let nextSlide = currentSlide;
 
-    switch (cmd) {
+    doLoad = true;
+    switch (json_event.CMD) {
+        case "START":
+            presId = json_event.PRES_ID;
+            nextSlide = 1;
+            break;
         case "NEXT":
-            console.log("in next !");
             if (currentSlide < lastSlide) {
                 nextSlide = currentSlide + 1;
-            }
+            } else {console.log("No next slide"); doLoad = false}
             break;
         case "PREV":
-            console.log("in prev !");
             if (currentSlide > 0) {
                 nextSlide = currentSlide - 1;
-            }
+            } else {console.log("No previous slide"); doLoad = false}
             break;
         case "END":
-            console.log("in end !");
             nextSlide = lastSlide;
             break;
-        default :
-            nextSlide = 0; //"BEGIN" and other tentatives
-            return;
+        case "BEGIN":
+            nextSlide = 1;
+            break;
+
+        default: //"PAUSE"
+            doLoad = false;
+            break;
     }
     return nextSlide;
 }
