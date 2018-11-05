@@ -49,7 +49,9 @@ class ContentController {
                 return res.send(content);
             }
             if (content.type === "img") {
-                return res.sendFile(Utils.getDataFilePath(content.fileName));
+                return res.sendFile(fs.realpathSync(
+                    Utils.getDataFilePath(content.fileName)
+                ));
             }
             res.redirect(content.src);
         });
