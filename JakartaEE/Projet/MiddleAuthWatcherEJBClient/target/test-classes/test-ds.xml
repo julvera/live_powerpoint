@@ -30,7 +30,7 @@
       <driver>h2</driver>
       <security>
          <user-name>sa</user-name>
-         <password>sa</password>
+         <pwd>sa</pwd>
       </security>
    </datasource>
 </datasources>

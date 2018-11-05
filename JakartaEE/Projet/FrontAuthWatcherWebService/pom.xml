@@ -41,7 +41,7 @@
 
    <dependencies>
 
-      <!-- Dependency on the EJB module so we can use it's services if needed -->
+      <!-- Dependency on the fr.cpe.Model.EJB module so we can use it's services if needed -->
       <dependency>
          <groupId>fr.cpe</groupId>
          <artifactId>MiddleAuthWatcherEJBClient</artifactId>
@@ -68,6 +68,12 @@
          <artifactId>jboss-json-api_1.0_spec</artifactId>
          <scope>provided</scope>
       </dependency>
+       <dependency>
+           <groupId>org.jboss.spec.javax.ejb</groupId>
+           <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+           <version>1.0.1.Final</version>
+           <scope>compile</scope>
+       </dependency>
    </dependencies>
 
    <build>

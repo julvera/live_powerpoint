@@ -48,7 +48,8 @@
         <!--TODO : We need to add all the modules -> DONE-->
         <dependency>
             <groupId>fr.cpe</groupId>
-            <artifactId>MiddleAuthAuthProject</artifactId>
+            <artifactId>WatcherAuthProject</artifactId>
+            <type>ejb</type>
         </dependency>
         <dependency>
             <groupId>fr.cpe</groupId>
@@ -74,7 +75,7 @@
                     <version>7</version>
                     <!-- Use Java EE ear libraries as needed. Java EE ear libraries 
                         are in easy way to package any libraries needed in the ear, and automatically 
-                        have any modules (EJB-JARs and WARs) use them -->
+                        have any modules (fr.cpe.Model.EJB-JARs and WARs) use them -->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <fileNameMapping>no-version</fileNameMapping>
                 </configuration>

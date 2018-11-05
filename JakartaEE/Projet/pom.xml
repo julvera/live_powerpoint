@@ -71,7 +71,7 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- Define the version of the EJB jar so that we don't need 
+            <!-- Define the version of the fr.cpe.Model.EJB jar so that we don't need
                 to repeat ourselves in every module -->
             <dependency>
                 <groupId>fr.cpe</groupId>
