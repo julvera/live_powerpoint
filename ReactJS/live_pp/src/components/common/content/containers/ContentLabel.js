@@ -7,7 +7,7 @@ class ContentLabel extends Component {
 
     render() {
         let display_info;
-        if(this.props.displayContentMode == "FULL"){
+        if(this.props.displayContentMode === "FULL"){
             display_info = (<div className = "thumbnail">ID : {this.props.id}  Title: {this.props.title}</div>)
         }
         return (

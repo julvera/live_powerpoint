@@ -1,32 +1,52 @@
 import React, { Component } from 'react';
-import Slid from '../../slid/components/Slid.js'
+import Slid from '../../common/slid/components/Slid.js'
 
-class SlidList extends Component {
+import {connect} from 'react-redux';
+
+
+class EditSlidPanel extends Component {
     constructor(props) {
         super(props);
         this.stage = {
-            selected_slide: this.props.selected_slide,
-            contentMap: this.props.contentMap
         }
     }
 
-    render() {
+    getRender(){
+        let array_render=[];
+        if (this.props.selected_slid.id == undefined)
+            return ;
+        array_render.push(
+                <Slid key={"EditSlidePanel_Slide "+ this.props.selected_slid.id}
+                                    id={this.props.selected_slid.id} 
+                                    title={this.props.selected_slid.title} 
+                                    txt={this.props.selected_slid.txt}
+                                    content_id={this.props.selected_slid.content_id} 
+                                    displayMode="FULL_MNG"
+                                    />)
+                
+        return array_render;
+    }
 
-       
-        
+    render() {
+        let array_render = this.getRender();
         return (
             <div className="thumbnail">
-                    <Slid key={"EditSlidePanel_Slide "+ this.props.selected_slide.id}
-                                    id={this.props.selected_slide.id} 
-                                    title={this.props.selected_slide.title} 
-                                    txt={this.props.selected_slide.txt}
-                                    content_id={this.props.selected_slide.content_id} 
-                                    contentMap={this.props.contentMap}
-                                    displaymode={'FULL_MNG'}
-                                    />
+                {array_render}
             </div>
         );
     }
 }
 
-export default SlidList;
+const mapStateToProps = (state, ownProps) => {
+    let mySelectedSlid ={}
+    for(let slidTpm in state.updateModelReducer.presentation.slidArray){
+        if(state.updateModelReducer.presentation.slidArray[slidTpm].id == state.selectedReducer.slid.id){
+            mySelectedSlid = state.updateModelReducer.presentation.slidArray[slidTpm];
+            break;
+        }
+    }
+    return {
+    selected_slid: mySelectedSlid
+    } };
+
+export default connect(mapStateToProps)(EditSlidPanel);

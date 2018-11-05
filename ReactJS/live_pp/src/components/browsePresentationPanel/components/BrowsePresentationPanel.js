@@ -7,7 +7,6 @@ class BrowsePResentationPanel extends Component {
         super(props);
         this.state = {
             presentation: this.props.presentation,
-            contentMap: this.props.contentMap
         }
     }
 
@@ -15,9 +14,7 @@ class BrowsePResentationPanel extends Component {
         
         return (
             <div className="thumbnail">
-               <Presentation presentation={this.props.presentation}
-                            contentMap={this.props.contentMap}
-                            displayMode={"FULL_MNG"}/>
+               <Presentation displayMode={"FULL_MNG"}/>
             </div>
         );
     }
