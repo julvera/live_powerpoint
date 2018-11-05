@@ -1,1 +1,53 @@
-HI
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Admin</title>
+    </head>
+    <body>
+        <button onclick="SendStart()">Start</button>
+        <button onclick="SendEnd()">End</button>
+        <button onclick="SendPause()">Pause</button>
+        <button onclick="SendBegin()">Begin</button>
+        <button onclick="SendPrev()">Prev</button>
+        <button onclick="SendNext()">Next</button>
+
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            socket.on("connection", function (hi) {
+                socket.emit("data_comm", socket.id);
+            });
+
+            function SendStart () {
+                EmitEvent("START", "efa0a79a-2f20-4e97-b0b7-71f824bfe349");
+            }
+            function SendPause () {
+                EmitEvent("PAUSE", "");
+            }
+            function SendBegin () {
+                EmitEvent("BEGIN", "");
+            }
+            function SendNext () {
+                EmitEvent("NEXT", "");
+            }
+            function SendPrev () {
+                EmitEvent("PREV", "");
+            }
+            function SendEnd () {
+                EmitEvent("END", "");
+            }
+
+            function EmitEvent(cmd, presID) {
+                socket.emit(
+                    "slidEvent",
+                    {
+                        "CMD": cmd,
+                        "PRES_ID": presID
+                    }
+                );
+            }
+        </script>
+
+    </body>
+</html>
