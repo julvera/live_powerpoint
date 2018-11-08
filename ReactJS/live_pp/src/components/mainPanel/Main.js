@@ -4,8 +4,8 @@ import '../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css';
 import './main.css';
 import BrowseContentPanel from '../browseContentPanel/components/BrowseContentPanel.js';
 import EditSlidPanel from '../editSlidPanel/containers/EditSlidPanel.js';
-import BrowsePresentationPanel from '../browsePresentationPanel/components/BrowsePresentationPanel.js'
-
+import BrowsePresentationPanel from '../browsePresentationPanel/components/BrowsePresentationPanel.js';
+import Comm from '../../services/Comm';
 
 //import needed to use redux with react.js
 import { createStore } from 'redux';
@@ -24,10 +24,19 @@ export default class Main extends React.Component{
 	constructor(props) {
 		super(props);
 
-		
-		
-		store.dispatch(updateContentMap(contentJson))
-		store.dispatch(updatePresentation(presJson))
+		store.dispatch(updateContentMap(contentJson));
+		//store.dispatch(updatePresentation(presJson));
+
+
+		Comm.loadPres('',(data) => {
+			console.log("Recuperer les datas  :   ");
+			console.log(data);
+			store.dispatch(updatePresentation(data));
+		},
+		(error)=>{
+			console.log("Recuperer les erreurs  :   ");
+			console.log(error);
+		});
 	}
 
 

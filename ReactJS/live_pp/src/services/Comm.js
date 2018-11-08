@@ -1,6 +1,5 @@
-
 var io =require('socket.io-client') ;
-var axios=require('axios') ;
+var axios=require('axios');
 
 class Comm{
     constructor(){
@@ -15,18 +14,18 @@ class Comm{
           return '';
     }
     
-    loadPres(presId,callback,callbackErr){
-     axios.get('/loadPres')
+    static loadPres(presId,callback,callbackErr){
+     axios.get('http://localhost:1337/loadPres')
        .then(function (data) {
          var size = Object.keys(data.data).length;
-         console.log("raw data");
-         console.log(data.data);
+         //console.log("raw data");
+         //console.log(data.data);
          let loadedPres=""
          if(size >0){
-             console.log("key");
+             /*console.log("key");
              console.log(Object.keys(data.data)[0]);
              console.log("data");
-             console.log(data.data[Object.keys(data.data)[0]]);
+             console.log(data.data[Object.keys(data.data)[0]]);*/
              loadedPres=data.data[Object.keys(data.data)[0]];
          }
             callback(loadedPres);
