@@ -26,8 +26,6 @@ class IOController {
             });
 
             socket.on("slidEvent", function (json_event) {
-                console.log("io.controller.slidEvent");
-
                 currentSlide = HandleCMD(json_event);
 
                 console.log("presId: " + presId);
