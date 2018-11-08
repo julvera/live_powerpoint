@@ -16,8 +16,6 @@ module.exports = router;
 
 router.route("/login")
     .post(function(request, response) {
-        //console.log("/login " + request.body["login"]);
-
         console.log(request);
         console.log(request.body);
         let data = JSON.stringify({
