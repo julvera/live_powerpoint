@@ -46,12 +46,17 @@ export default class Main extends React.Component{
 
 		
 	}
-
-
+	
 	render() {		
  		return (
 			<Provider store={store} >
 				<div className='container-fluid height-100'>
+				<button onclick="Comm.play('efa0a79a-2f20-4e97-b0b7-71f824bfe349')">Start</button>
+				<button onclick="Comm.end()">End</button>
+				<button onclick="Comm.pause()">Pause</button>
+				<button onclick="Comm.begin()">Begin</button>
+				<button onclick="Comm.backward()">Prev</button>
+				<button onclick="Comm.forward()">Next</button>
 					<div className="row height-100">
 						<div className='col-md-3 col-lg-3 height-100 vertical-scroll thumnail'>
 							<BrowsePresentationPanel />

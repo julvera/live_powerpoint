@@ -115,27 +115,27 @@ class Comm{
         });
     }
     
-    backward(){
+    static backward(){
         this.socket.emit('slidEvent', {'CMD':"PREV"});
     }
     
-    forward(){
+    static forward(){
         this.socket.emit('slidEvent', {'CMD':"NEXT"});
     }
      
-    play(presUUID){
+    static play(presUUID){
         this.socket.emit('slidEvent', {'CMD':"START",'PRES_ID':presUUID});
     }
     
-    pause(){
+    static pause(){
         this.socket.emit('slidEvent', {'CMD':"PAUSE"});
     }
     
-    begin(){
+    static begin(){
         this.socket.emit('slidEvent', {'CMD':"BEGIN"});
     }
     
-    end(){
+    static end(){
         this.socket.emit('slidEvent', {'CMD':"END"});
     }
 
