@@ -21,8 +21,8 @@ app.use(presentationRoute);
 
 app.use("/admin", express.static(path.join(__dirname, "public/admin")));
 app.use("/watch", express.static(path.join(__dirname, "public/watch")));
-app.use("/react", express.static(path.join(__dirname, "react_build")));
-
+app.use("/react", express.static(path.join(__dirname, "public/react")));
+app.use("/static", express.static(path.join(__dirname, "public/react/static")));
 server.listen(CONFIG.port, () => {
     const host = server.address().address;
     const port = server.address().port;

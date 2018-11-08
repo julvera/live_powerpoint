@@ -55,8 +55,6 @@ class Slid extends Component {
                                 txt={this.props.txt}></EditMetaSlid>)
         }
                 
-        console.log("content map")
-        console.log(this.props.content_map)
         return (
             <div className ="align-center height-30" onClick={()=>{this.updateSelectedSlid()}}>
                 <div>

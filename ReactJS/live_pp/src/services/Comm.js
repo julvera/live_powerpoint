@@ -1,6 +1,5 @@
-
 var io =require('socket.io-client') ;
-var axios=require('axios') ;
+var axios=require('axios');
 
 class Comm{
     constructor(){
@@ -15,18 +14,18 @@ class Comm{
           return '';
     }
     
-    loadPres(presId,callback,callbackErr){
-     axios.get('/loadPres')
+    static loadPres(presId,callback,callbackErr){
+     axios.get('http://localhost:1337/loadPres')
        .then(function (data) {
          var size = Object.keys(data.data).length;
-         console.log("raw data");
-         console.log(data.data);
+         //console.log("raw data");
+         //console.log(data.data);
          let loadedPres=""
          if(size >0){
-             console.log("key");
+             /*console.log("key");
              console.log(Object.keys(data.data)[0]);
              console.log("data");
-             console.log(data.data[Object.keys(data.data)[0]]);
+             console.log(data.data[Object.keys(data.data)[0]]);*/
              loadedPres=data.data[Object.keys(data.data)[0]];
          }
             callback(loadedPres);
@@ -37,8 +36,8 @@ class Comm{
             
     }
     
-    loadContent(callback,callbackErr){
-     axios.get('/resources_list')
+    static loadContent(callback,callbackErr){
+     axios.get('http://localhost:1337/contents')
        .then(function (data) {
          //console.log("raw content data");
          //console.log(data.data);
@@ -116,27 +115,27 @@ class Comm{
         });
     }
     
-    backward(){
+    static backward(){
         this.socket.emit('slidEvent', {'CMD':"PREV"});
     }
     
-    forward(){
+    static forward(){
         this.socket.emit('slidEvent', {'CMD':"NEXT"});
     }
      
-    play(presUUID){
+    static play(presUUID){
         this.socket.emit('slidEvent', {'CMD':"START",'PRES_ID':presUUID});
     }
     
-    pause(){
+    static pause(){
         this.socket.emit('slidEvent', {'CMD':"PAUSE"});
     }
     
-    begin(){
+    static begin(){
         this.socket.emit('slidEvent', {'CMD':"BEGIN"});
     }
     
-    end(){
+    static end(){
         this.socket.emit('slidEvent', {'CMD':"END"});
     }
 
