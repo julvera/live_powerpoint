@@ -36,8 +36,8 @@ class Comm{
             
     }
     
-    loadContent(callback,callbackErr){
-     axios.get('/resources_list')
+    static loadContent(callback,callbackErr){
+     axios.get('http://localhost:1337/contents')
        .then(function (data) {
          //console.log("raw content data");
          //console.log(data.data);

@@ -15,8 +15,8 @@ import {updateContentMap,updatePresentation} from '../../actions';
 import { Provider } from 'react-redux';
 
 //json import
-import * as contentJson from '../../data/contentMap.json';
-import * as presJson from '../../data/pres.json'
+//import * as contentJson from '../../data/contentMap.json';
+//import * as presJson from '../../data/pres.json'
 
 const store = createStore(myReducers);
 
@@ -24,19 +24,27 @@ export default class Main extends React.Component{
 	constructor(props) {
 		super(props);
 
-		store.dispatch(updateContentMap(contentJson));
+		//store.dispatch(updateContentMap(contentJson));
 		//store.dispatch(updatePresentation(presJson));
 
+		Comm.loadContent((data) => {
+			store.dispatch(updateContentMap(data));
+		},
+		(error)=>{
+			console.log("Error loadContent  :   ");
+			console.log(error);
+		});
 
 		Comm.loadPres('',(data) => {
-			console.log("Recuperer les datas  :   ");
-			console.log(data);
 			store.dispatch(updatePresentation(data));
 		},
 		(error)=>{
-			console.log("Recuperer les erreurs  :   ");
+			console.log("Error loadPres :");
 			console.log(error);
 		});
+
+
+		
 	}
 
 
