@@ -13,7 +13,7 @@ router.route("/")
     });
 
 router.route("/login")
-    .post("/login", function(request, response) {
+    .post(function(request, response) {
         console.log("/login " + request.body["login"]);
         let data = JSON.stringify({
             "login": request.body["login"],
