@@ -1,6 +1,7 @@
 "use strict";
 
 const express = require("express");
+const http = require("http");
 const router = express.Router();
 //const path = require("path");
 const http = require("http");
@@ -17,8 +18,8 @@ router.route("/login")
     .post(function(request, response) {
         //console.log("/login " + request.body["login"]);
 
-        console.log(request.query.login);
-        console.log(request.query.password);
+        console.log(request);
+        console.log(request.body);
         let data = JSON.stringify({
             "login": request.query.login,
             "pwd": request.query.password
@@ -68,30 +69,3 @@ router.route("/login")
          // req.write(data);
          // req.end();
     });
-
-
-// router.post("/login", function(request, response) {
-//     console.log("/login " + request.body["login"]);
-//     let data = JSON.stringify({
-//         "login": request.body["login"],
-//         "password": request.body["password"]
-//     });
-//     let options = {
-//         method: "POST",
-//         host: "localhost",
-//         port: "8000",
-//         path: "TODO",
-//         headers: {
-//             "Content-Type": "application/json; charset=utf-8",
-//             "Content-Length": data.length
-//         }
-//     };
-//
-//     if (request.body["login"] === "jul") {
-//         console.log("ADMIN ");
-//         response.send({"role": "ADMIN"});
-//     }
-//     else {
-//         response.send({"role": "USER"});
-//     }
-// });
