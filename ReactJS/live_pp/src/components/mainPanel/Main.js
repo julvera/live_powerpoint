@@ -23,40 +23,48 @@ const store = createStore(myReducers);
 export default class Main extends React.Component{
 	constructor(props) {
 		super(props);
-
 		//store.dispatch(updateContentMap(contentJson));
 		//store.dispatch(updatePresentation(presJson));
 
-		Comm.loadContent((data) => {
-			store.dispatch(updateContentMap(data));
+		var comm = new Comm()
+
+		comm.loadContent((contentMap) => {
+
+			store.dispatch(updateContentMap(contentMap));
+
+			comm.loadPres('',(pres) => {
+
+				store.dispatch(updatePresentation(pres));
+				comm.socketConnection(pres.id)
+
+			},
+			(error)=>{
+
+				console.log("Error loadPres :");
+				console.log(error);
+
+			});
+
 		},
 		(error)=>{
+
 			console.log("Error loadContent  :   ");
 			console.log(error);
+
 		});
-
-		Comm.loadPres('',(data) => {
-			store.dispatch(updatePresentation(data));
-		},
-		(error)=>{
-			console.log("Error loadPres :");
-			console.log(error);
-		});
-
-
-		
+	
 	}
 	
 	render() {		
  		return (
 			<Provider store={store} >
 				<div className='container-fluid height-100'>
-				<button onclick="Comm.play('efa0a79a-2f20-4e97-b0b7-71f824bfe349')">Start</button>
-				<button onclick="Comm.end()">End</button>
-				<button onclick="Comm.pause()">Pause</button>
-				<button onclick="Comm.begin()">Begin</button>
-				<button onclick="Comm.backward()">Prev</button>
-				<button onclick="Comm.forward()">Next</button>
+				<button onclick="comm.play()">Start</button>
+				<button onclick="comm.end()">End</button>
+				<button onclick="comm.pause()">Pause</button>
+				<button onclick="comm.begin()">Begin</button>
+				<button onclick="comm.backward()">Prev</button>
+				<button onclick="comm.forward()">Next</button>
 					<div className="row height-100">
 						<div className='col-md-3 col-lg-3 height-100 vertical-scroll thumnail'>
 							<BrowsePresentationPanel />
