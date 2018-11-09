@@ -5,16 +5,15 @@ class Comm{
     constructor(){
         this.comm={};
         this.comm.io={};
-        this.socket="";
         this.emitOnConnect=this.emitOnConnect.bind(this);
-
+        this.socket = ''
     }
         
     toString(){
           return '';
     }
     
-    static loadPres(presId,callback,callbackErr){
+    loadPres(presId,callback,callbackErr){
      axios.get('http://localhost:1337/loadPres')
        .then(function (data) {
          var size = Object.keys(data.data).length;
@@ -36,7 +35,7 @@ class Comm{
             
     }
     
-    static loadContent(callback,callbackErr){
+    loadContent(callback,callbackErr){
      axios.get('http://localhost:1337/contents')
        .then(function (data) {
          //console.log("raw content data");
@@ -115,27 +114,27 @@ class Comm{
         });
     }
     
-    static backward(){
+    backward(){
         this.socket.emit('slidEvent', {'CMD':"PREV"});
     }
     
-    static forward(){
+    forward(){
         this.socket.emit('slidEvent', {'CMD':"NEXT"});
     }
      
-    static play(presUUID){
-        this.socket.emit('slidEvent', {'CMD':"START",'PRES_ID':presUUID});
+    play(){
+        this.socket.emit('slidEvent', {'CMD':"START",'PRES_ID':this.comm.io.uuid});
     }
     
-    static pause(){
+    pause(){
         this.socket.emit('slidEvent', {'CMD':"PAUSE"});
     }
     
-    static begin(){
+    begin(){
         this.socket.emit('slidEvent', {'CMD':"BEGIN"});
     }
     
-    static end(){
+    end(){
         this.socket.emit('slidEvent', {'CMD':"END"});
     }
 
