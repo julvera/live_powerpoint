@@ -16,15 +16,12 @@ const presentationRoute = require("./app/routes/presentation.route.js");
 const app = express();
 const server = http.createServer(app);
 
-app.use(bodyParser.json()); // support pour les ficher json
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(defaultRoute);
 app.use(contentRoute);
 app.use(presentationRoute);
 
-app.use("/admin", express.static(path.join(__dirname, "public/admin")));
-app.use("/watch", express.static(path.join(__dirname, "public/watch")));
 app.use("/react", express.static(path.join(__dirname, "react_build")));
 app.use("/", express.static(path.join(__dirname, "public/")));
 
