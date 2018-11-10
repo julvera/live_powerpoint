@@ -13,7 +13,7 @@ class BrowsePResentationPanel extends Component {
     render() {
         
         return (
-            <div className="thumbnail">
+            <div>
                <Presentation displayMode={"FULL_MNG"}/>
             </div>
         );

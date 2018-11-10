@@ -14,12 +14,12 @@ class PresentationVisual extends Component {
 
     render() {        
         return (
-            <div className="thumbnail">
+            <div>
                 <h3>Titre</h3> 
                 {this.props.title}
                 <h3>Description</h3>
                 {this.props.description}
-                <div>
+                <div className="vertical-scroll height-100">
                 <SlidList key={"SlidList" + this.props.id} 
                         slidArray={this.props.slidArray}/>
                 </div>

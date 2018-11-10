@@ -17,9 +17,9 @@ class BrowseContentPanel extends Component {
         }
         
         return (
-            <div className="thumbnail">
+            <div className="thumbnail" >
                 BrowseContentPanel : 
-                <div className="thumbnail">
+                <div>
                     {display_result}
                 </div>
             </div>

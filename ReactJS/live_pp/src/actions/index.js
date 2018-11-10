@@ -32,3 +32,4 @@ export const updateSlid=(tmpSlid)=>{
         slid:tmpSlid,
     };
 }
+

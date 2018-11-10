@@ -35,7 +35,7 @@ class Presentation extends Component {
         }
 
         return (
-            <div className="thumbnail">
+            <div>
                 <div>
                     {display_result}
                 </div>

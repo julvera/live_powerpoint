@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slid from '../../slid/components/Slid.js'
+import './slidList.css';
 
 class SlidList extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class SlidList extends Component {
         }
         
         return (
-            <div className="thumbnail">
+            <div>
                     {display_result}
             </div>
         );

@@ -19,7 +19,7 @@ class ContentVisual extends Component {
                 );
             case "video":
                 return (
-                    <object  width="100%" height="100%" data={this.props.content.src}/>
+                    <object data={this.props.content.src}/>
                 );
             case "web":
                 return(
@@ -30,11 +30,19 @@ class ContentVisual extends Component {
         }
     }
 
+    drag(ev,content) {
+        console.log("is content")
+        console.log(content)
+        ev.dataTransfer.setData("text", content.id);
+    }
+    
     render() {
         let display_visual = this.visualTypeProcessing();
         return (
-            <div className="thumbnail">
-                {display_visual}
+            <div>
+                <div className="contentVisual" draggable="true" onDragStart={(ev) => this.drag(ev,this.props.content)}>
+                    {display_visual}
+                </div>
                 <ContentLabel
                     displayContentMode={this.props.displayContentMode}
                     id={this.props.content.id}

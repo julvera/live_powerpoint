@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Slid.css';
+
 import Content from '../../content/components/Content.js'
 import EditMetaSlid from '../containers/EditMetaSlid.js'
 
@@ -43,6 +45,18 @@ class Slid extends Component {
        this.props.dispatch(setSelectedSlid(tmpSlid));
     }
        
+    allowDrop(ev) {
+        ev.preventDefault();
+    }
+    
+    drop(ev) {
+        var data = ev.dataTransfer.getData("text");
+        console.log("Data is : ");
+        console.log(data);
+        console.log("Content is : ");
+        console.log(this.props.content_id);
+        this.updateCurrentSlid(this.props.id, this.props.title, this.props.txt, data); 
+    }
 
     render() {
 
@@ -56,14 +70,14 @@ class Slid extends Component {
         }
                 
         return (
-            <div className ="align-center height-30" onClick={()=>{this.updateSelectedSlid()}}>
+            <div className="thumbnail" onClick={()=>{this.updateSelectedSlid()}}>
                 <div>
                     {this.props.title}
                 </div>
                 <div>
                     {this.props.txt}
                 </div>
-                <div className="height-30">
+                <div  onDragOver={(ev) => this.allowDrop(ev)} onDrop={(ev) => this.drop(ev)}>
                      <Content key={"Slid"+this.props.content_id} 
                             content={this.props.content_map[this.props.content_id]} 
                             displayContentMode={"TypeOnly"}/>

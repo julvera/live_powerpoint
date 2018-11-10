@@ -30,7 +30,7 @@ class EditSlidPanel extends Component {
     render() {
         let array_render = this.getRender();
         return (
-            <div className="thumbnail">
+            <div>
                 {array_render}
             </div>
         );

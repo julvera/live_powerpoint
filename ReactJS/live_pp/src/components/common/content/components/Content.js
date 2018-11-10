@@ -8,7 +8,7 @@ class Content extends Component {
 
     render() {
         return (
-            <div className="thumbnail">
+            <div>
                 <ContentVisual content={this.props.content} displayContentMode={this.props.displayContentMode}> </ContentVisual>
             </div>
         );
