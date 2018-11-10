@@ -60,8 +60,6 @@ public class MessageReceiverSync implements MessageReceiverSyncLocal {
                     System.out.println("Role:" + user.getRole());
 
                     jsonString = Json.createObjectBuilder()
-                            .add("login", user.getLogin())
-                            .add("pwd", user.getPwd())
                             .add("role", user.getRole())
                             .build()
                             .toString();
