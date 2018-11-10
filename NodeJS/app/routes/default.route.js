@@ -10,8 +10,8 @@ module.exports = router;
 router.route("/login")
     .post(function(request, response) {
         let data = JSON.stringify({
-            "login": request.body["login"],
-            "pwd": request.body["password"]
+            "login": request.body.login,
+            "pwd": request.body.password
         });
 
         let options = {
@@ -24,31 +24,23 @@ router.route("/login")
                 "Content-Length": data.length
             }
         };
-        console.log(data);
 
         let req = http.request(options, function(res) {
             let msg = "";
             res.setEncoding("utf8");
 
-            res.on("data", function(chunk) {
-                msg += chunk;
-            });
+            res.on("data", function(chunk) {msg += chunk});
 
             res.on("end", function() {
-                console.log(msg);
-                if(msg === "")
-                {
+                if (msg === "") {
                     console.log("Empty reply from JEE webservice");
-                    //response.redirect("/TODO: page d'erreur?");
+                    //response.redirect("somewhere"); //TODO: page d'erreur?
                     response.send(msg);
                 } else {
-                    let reply = JSON.parse(msg);
-                    if(reply.role === "admin"){
-                        //response.redirect("/admin");
-                        response.send(msg);
+                    if(msg.role === "admin"){
+                        response.redirect("/admin");
                     } else {
-                        //response.redirect("/watch");
-                        response.send(msg);
+                        response.redirect("/watch");
                     }
                 }
             });
