@@ -22,8 +22,11 @@ public class DataContainer {
     public Role checkUser(UserModel user) {
         //Check in DB
 
-        tempUser = myDB.getUserByLogin(user.getLogin());
+        tempUser = myDB.getUserByLogin(user);
+
         if(tempUser == null){
+            System.out.println("Wrong Login or Password ");
+
             return Role.NONE;
         }
         System.out.println("tempUser login : "+tempUser.getLogin());
@@ -32,15 +35,15 @@ public class DataContainer {
         System.out.println("tempUser lastname : "+tempUser.getLastname());
 
         switch (tempUser.getRole()) {
-            case "boss":
-                tempRole = Role.boss;
+            case "admin":
+                tempRole = Role.admin;
                 break;
-            case "slave":
-                tempRole = Role.slave;
+            case "user":
+                tempRole = Role.user;
 
                 break;
-            case "intern":
-                tempRole = Role.intern;
+            default:
+                tempRole = Role.user;
                 break;
         }
         return tempRole;

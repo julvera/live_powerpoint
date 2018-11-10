@@ -5,6 +5,7 @@ import fr.cpe.UserModel;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * Created by ubuntu on 9/24/16.
@@ -28,18 +29,27 @@ public class UserDao implements UserDaoInterface {
         UserModel user = (UserModel)em.createQuery("SELECT u from UserModel u where u.id = :id")
                 .setParameter("id", id)
                 .getSingleResult();
-
         return user;
     }
 
 
 
-    public UserModel getUserByLogin(String myLogin) {
-        UserModel user = (UserModel)em.createQuery("SELECT u from UserModel u where u.login = :id")
-                .setParameter("id", myLogin)
-                .getSingleResult();
+    public UserModel getUserByLogin(UserModel pUser) {
+        UserModel user;
+        List results = em.createQuery("SELECT u from UserModel u where u.login = :id")
+                .setParameter("id", pUser.getLogin())
+                .getResultList();
 
-        return user;
+
+        if (!results.isEmpty()){
+            user = (UserModel) results.get(0);
+
+            if (pUser.getPwd().equals(user.getPwd())) {
+                return user;
+            }
+        }
+        return null;
+
     }
 
 }

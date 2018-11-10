@@ -27,11 +27,13 @@ public class WatcherAuthServiceImplementation  implements WatcherAuthService {
         System.out.println("DEBUT DU WS *********************");
         System.out.println("WatcherAUthServiceImplementation Class : WebServiceFunction => WS bien appele");
 
-         //return authservice.authValid(myUser);
-         myMessage.sendMessage(myUser);
-         JsonAuth =  myReceiver.receiveMessage();
-
-//        System.out.println("FIN DU WS *********************");
-        return JsonAuth;
+        if(myUser.getLogin() != null ||  myUser.getPwd() != null ) {
+            myMessage.sendMessage(myUser);
+            JsonAuth = myReceiver.receiveMessage();
+            return JsonAuth;
+        }
+        else{
+            return "No Data";
+        }
     }
 }

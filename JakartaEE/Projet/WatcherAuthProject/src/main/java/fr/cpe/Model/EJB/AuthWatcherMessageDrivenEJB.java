@@ -62,12 +62,10 @@ public class AuthWatcherMessageDrivenEJB implements MessageListener {
 
                     Role currentTestRole=dataContainer.checkUser(user);
                     System.out.println("Current test Role : "+ currentTestRole.toString());
-                    if(Role.NONE == currentTestRole){
-                        sender.sendMessage(user);
-                    }else{
-                        user.setRole(currentTestRole.toString());
-                        sender.sendMessage(user);
-                    }
+
+                    user.setRole(currentTestRole.toString());
+                    sender.sendMessage(user);
+
                 }
             } else {
                 System.out.println("Not valid message for this Queue MDB");

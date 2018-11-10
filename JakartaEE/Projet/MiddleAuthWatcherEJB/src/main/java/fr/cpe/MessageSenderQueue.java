@@ -32,8 +32,7 @@ public class MessageSenderQueue implements MessageSenderQueueLocal{
             message.setObject(user);
             context.createProducer().send(queue, user);
             System.out.println("Je push dans la QUEUE a " + new Date());
-            System.out.println("login:"+user.getLogin());
-            System.out.println("pwd:"+user.getPwd());
+            System.out.println("role:"+user.getRole());
 
         } catch (JMSException e) {
             e.printStackTrace();

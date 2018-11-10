@@ -14,5 +14,5 @@ public interface UserDaoInterface {
 
 
 
-     UserModel getUserByLogin(String myLogin);
+     UserModel getUserByLogin(UserModel myLogin);
 }
