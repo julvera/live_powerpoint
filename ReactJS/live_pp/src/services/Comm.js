@@ -122,8 +122,8 @@ class Comm{
         this.socket.emit('slidEvent', {'CMD':"NEXT"});
     }
      
-    play(){
-        this.socket.emit('slidEvent', {'CMD':"START",'PRES_ID':this.comm.io.uuid});
+    play(uuid){
+        this.socket.emit('slidEvent', {'CMD':"START",'PRES_ID':uuid});
     }
     
     pause(){

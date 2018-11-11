@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Slid from '../../common/slid/components/Slid.js'
+import Slid from '../../common/slid/components/Slid.js';
+import PresentationNavigation from './PresentationNavigation.js';
 
 import {connect} from 'react-redux';
 
@@ -31,6 +32,7 @@ class EditSlidPanel extends Component {
         let array_render = this.getRender();
         return (
             <div>
+                <PresentationNavigation></PresentationNavigation>
                 {array_render}
             </div>
         );

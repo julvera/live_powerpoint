@@ -28,72 +28,63 @@ class Main extends Component{
 
 		this.comm = new Comm()
 		this.state = {
-			contentMap:contentJson,
-			current_pres:presJson,
 		}
+		//store.dispatch(updateContentMap(contentJson));
+		//store.dispatch(updatePresentation(presJson));
 
 		this.loadContentUpdate=this.loadContentUpdate.bind(this);
 		this.loadPresUpdate=this.loadPresUpdate.bind(this);
 		this.callbackErr =this.callbackErr.bind(this);
 		
-		//FIRST ACTIONS
-		// try to load the contentMap from the server
+
 		this.comm.loadContent(this.loadContentUpdate,this.callbackErr);
-		// try to load the presentation from the server
 		this.comm.loadPres(0,this.loadPresUpdate,this.callbackErr);
-		// create the sokect connection between the server and the web browser
-		this.comm.socketConnection(this.state.uuid);
+		this.comm.socketConnection(store.getState().updateModelReducer.presentation.id);
 
 		store.subscribe(() => {
 			this.setState({presentation:store.getState().updateModelReducer.presentation});
 			this.setState({contentMap:store.getState().updateModelReducer.content_map});
-			if(store.getState().commandReducer.cmdPres == 'SAVE_CMD'){
-				console.log('callingSave')
-				this.comm.savPres(store.getState().updateModelReducer.presentation,this.callbackErr);
-				console.log("reset cmd");
-				store.dispatch(sendNavCmd(""));
+			switch (store.getState().commandReducer.cmdPres){
+				case 'SAVE_CMD':
+					this.comm.savPres(store.getState().updateModelReducer.presentation,this.callbackErr);
+					store.dispatch(sendNavCmd(""));
+					return
+				case 'START':
+					console.log(store.getState().updateModelReducer.presentation.id)
+					this.comm.play(store.getState().updateModelReducer.presentation.id);
+					store.dispatch(sendNavCmd(""));
+					return
+				case 'END':
+					this.comm.end();
+					store.dispatch(sendNavCmd(""));
+					return
+				case 'PAUSE':
+					this.comm.pause();
+					store.dispatch(sendNavCmd(""));
+					return
+                case 'BEGIN':
+					this.comm.begin();
+					store.dispatch(sendNavCmd(""));
+                    return 
+                case 'NEXT':
+					this.comm.forward();
+					store.dispatch(sendNavCmd(""));
+                    return 
+                case 'PREV':
+					this.comm.backward()
+					store.dispatch(sendNavCmd(""));
+					return 
+				default:
+					return
 			}
 		});
+	};
 
-		
- 
-
-		/*
-		var comm = new Comm()
-
-		comm.loadContent((contentMap) => {
-
-			store.dispatch(updateContentMap(contentMap));
-
-			comm.loadPres('',(pres) => {
-
-				store.dispatch(updatePresentation(pres));
-				comm.socketConnection(pres.id)
-
-			},
-			(error)=>{
-
-				console.log("Error loadPres :");
-				console.log(error);
-
-			});
-
-		},
-		(error)=>{
-
-			console.log("Error loadContent  :   ");
-			console.log(error);
-
-		});*/
-	
-	}
 	loadContentUpdate(data){
-		//send action to the store for update the current contentMap
 		store.dispatch(updateContentMap(data));
 	}
 	   
 	loadPresUpdate(data){
-		//send action to the store for update the current presentation
 		store.dispatch(updatePresentation(data));
 	}
 	   

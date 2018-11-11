@@ -8,7 +8,6 @@ class CommandButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            presentation: this.props.presentation,
             removeSlidNumber: '',
         };
         this.handleChange = this.handleChange.bind(this);

@@ -71,6 +71,7 @@ function LoadSlide () {
 
 /** Determine next slide's id according to the given command */
 function HandleCMD (json_event) {
+    console.log("JE SUIS ICIII PUTAIN DE MERDE PUTEUUUU")
     console.log(json_event.CMD);
     let nextSlide = currentSlide;
 
