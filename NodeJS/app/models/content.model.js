@@ -12,7 +12,7 @@ class ContentModel {
         this.fileName = fileName;
         this.src = src;
 
-        var data = null;
+        let data = null;
         this.setData = function (newData) {
             data = newData;
         };

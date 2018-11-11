@@ -22,21 +22,11 @@
             function SendStart () {
                 EmitEvent("START", "efa0a79a-2f20-4e97-b0b7-71f824bfe349");
             }
-            function SendPause () {
-                EmitEvent("PAUSE", "");
-            }
-            function SendBegin () {
-                EmitEvent("BEGIN", "");
-            }
-            function SendNext () {
-                EmitEvent("NEXT", "");
-            }
-            function SendPrev () {
-                EmitEvent("PREV", "");
-            }
-            function SendEnd () {
-                EmitEvent("END", "");
-            }
+            function SendPause () {EmitEvent("PAUSE", "")}
+            function SendBegin () {EmitEvent("BEGIN", "")}
+            function SendNext () {EmitEvent("NEXT", "")}
+            function SendPrev () {EmitEvent("PREV", "")}
+            function SendEnd () {EmitEvent("END", "")}
 
             function EmitEvent(cmd, presID) {
                 socket.emit(

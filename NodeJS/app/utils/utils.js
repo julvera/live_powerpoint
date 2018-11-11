@@ -5,6 +5,8 @@ const path = require("path");
 const http = require("http");
 const CONFIG = JSON.parse(process.env.CONFIG);
 
+let ssn;
+
 
 class Utils {
 
@@ -95,6 +97,7 @@ class Utils {
     }
 
     static verify_login(request, response) {
+        ssn = request.session;
         let data = JSON.stringify({
             "login": request.body.login,
             "pwd": request.body.password
@@ -111,40 +114,46 @@ class Utils {
             }
         };
 
-        let req = http.request(options, function(res) {
+        let req = http.request(options, function (res) {
             let msg = "";
             res.setEncoding("utf8");
 
-            res.on("data", function(chunk) {msg += chunk});
+            res.on("data", function (chunk) {msg += chunk});
 
-            res.on("end", function() {
+            res.on("end", function () {
                 if (msg === "") {
-                    console.log("Empty reply from JEE webservice");
-                    //response.redirect("somewhere"); //TODO: page d'erreur?
-                    response.send(msg);
+                    let emsg = "Empty reply from JEE webservice";
+                    console.log(emsg);
+                    response.send(emsg);
                 } else {
-
                     msg = JSON.parse(msg);
+                    ssn.role = msg.role;
 
-                    if(msg.role === "admin"){
-
+                    if (ssn.role === "admin") {
                         response.redirect("/admin");
-
                     } else if (msg.role === "user"){
-
                         response.redirect("/watch");
-
-                    }
-                    else{
-
-                        response.redirect("/");
-                    }
+                    } else {response.redirect("/")}
                 }
             });
+        }).on("error", function(error) {
+            console.log(error);
+            response.send(
+                "Error while connecting to JEE webservice. Please verify " +
+                "the server is running an try again."
+            )
         });
 
         req.write(data);
         req.end();
+    }
+
+    static isLoggedIn (req, res, next) {
+        if (req.session.role === "admin") {
+            next();
+        } else {
+            res.redirect("/");
+        }
     }
 }
 
