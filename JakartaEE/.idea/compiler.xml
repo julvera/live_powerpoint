@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tp2real-ear" />
+        <module name="tp2real-ejb" />
+        <module name="tp2real-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tp2real" target="1.7" />
+      <module name="tp2real-ear" target="1.7" />
+      <module name="tp2real-ejb" target="1.7" />
+      <module name="tp2real-web" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
