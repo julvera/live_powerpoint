@@ -147,7 +147,6 @@ class Utils {
     }
 
     static isLoggedIn (req, res, next) {
-        console.log("trying restricted file");
         if (req.session.role === "admin") {
             next();
         } else {
