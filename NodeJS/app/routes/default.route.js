@@ -10,12 +10,12 @@ let ssn;
 module.exports = router;
 
 router.route("/admin")
-    .get(function (req,res) {
+    .get(function (req, res) {
         ssn = req.session;
         console.log(ssn);
-        console.log(ssn.role);
         if (ssn.role === "admin") {
-            express.static(path.join(__dirname, "../../public/admin"))
+            console.log("trying to redirect");
+            res.redirect("/react")
         } else {
             res.end("<h1>login first.</h1>");
         }
