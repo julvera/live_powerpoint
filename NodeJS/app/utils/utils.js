@@ -114,30 +114,45 @@ class Utils {
             }
         };
 
-        let req = http.request(options, function(res) {
+        let req = http.request(options, function (res) {
             let msg = "";
             res.setEncoding("utf8");
 
-            res.on("data", function(chunk) {msg += chunk});
+            res.on("data", function (chunk) {msg += chunk});
 
-            res.on("end", function() {
+            res.on("end", function () {
                 if (msg === "") {
-                    console.log("Empty reply from JEE webservice");
-                    //response.redirect("somewhere"); //TODO: page d'erreur?
-                    response.send(msg);
+                    let emsg = "Empty reply from JEE webservice";
+                    console.log(emsg);
+                    response.send(emsg);
                 } else {
                     ssn.role = msg.role;
-                    if(ssn.role === "admin"){
-                        response.redirect("/react");
+                    if (ssn.role === "admin") {
+                        response.redirect("/admin");
                     } else {
                         response.redirect("/watch");
                     }
                 }
             });
+        }).on("error", function(error) {
+            console.log(error);
+            response.send(
+                "Error while connecting to JEE webservice. Please verify " +
+                "the server is running an try again."
+            )
         });
 
         req.write(data);
         req.end();
+    }
+
+    static isLoggedIn (req, res, next) {
+        console.log("trying restricted file");
+        if (req.session.role === "admin") {
+            next();
+        } else {
+            res.redirect("/");
+        }
     }
 }
 

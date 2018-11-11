@@ -13,19 +13,24 @@ const defaultRoute = require("./app/routes/default.route.js");
 const IOController = require("./app/controllers/io.controller.js");
 const contentRoute = require("./app/routes/content.route.js");
 const presentationRoute = require("./app/routes/presentation.route.js");
+const Utils = require("./app/utils/utils");
 
 const app = express();
 const server = http.createServer(app);
 
-app.use(session({secret:'H4RD2FINDSECRET'})); //Find harder
+app.use(session({
+    secret:'H4RD2FINDSECRET',
+    resave : true,
+    saveUninitialized : true
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(defaultRoute);
 app.use(contentRoute);
 app.use(presentationRoute);
 
-app.use("/react", express.static(path.join(__dirname, "react_build")));
-app.use("/", express.static(path.join(__dirname, "public/")));
+app.use("/admin", Utils.isLoggedIn, express.static(path.join(__dirname, "react_build")));
+app.use("/", express.static(path.join(__dirname, "/public")));
 
 server.listen(CONFIG.port, () => {
     const host = server.address().address;
