@@ -29,7 +29,8 @@ app.use(defaultRoute);
 app.use(contentRoute);
 app.use(presentationRoute);
 
-app.use("/admin", Utils.isLoggedIn, express.static(path.join(__dirname, "react_build")));
+app.use("/static", Utils.isLoggedIn, express.static(path.join(__dirname, "/react/static"))); //for react
+app.use("/admin", Utils.isLoggedIn, express.static(path.join(__dirname, "react")));
 app.use("/", express.static(path.join(__dirname, "/public")));
 
 server.listen(CONFIG.port, () => {
