@@ -4,6 +4,7 @@ const CONFIG = require("./config.json");
 process.env.CONFIG = JSON.stringify(CONFIG);
 
 const express = require("express");
+const session = require('express-session');
 const http = require("http");
 const path = require("path");
 const bodyParser = require('body-parser');
@@ -16,6 +17,7 @@ const presentationRoute = require("./app/routes/presentation.route.js");
 const app = express();
 const server = http.createServer(app);
 
+app.use(session({secret:'H4RD2FINDSECRET'})); //Find harder
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(defaultRoute);

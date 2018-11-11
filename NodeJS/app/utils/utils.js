@@ -5,6 +5,8 @@ const path = require("path");
 const http = require("http");
 const CONFIG = JSON.parse(process.env.CONFIG);
 
+let ssn;
+
 
 class Utils {
 
@@ -95,6 +97,7 @@ class Utils {
     }
 
     static verify_login(request, response) {
+        ssn = request.session;
         let data = JSON.stringify({
             "login": request.body.login,
             "pwd": request.body.password
@@ -110,30 +113,38 @@ class Utils {
                 "Content-Length": data.length
             }
         };
-
-        let req = http.request(options, function(res) {
-            let msg = "";
-            res.setEncoding("utf8");
-
-            res.on("data", function(chunk) {msg += chunk});
-
-            res.on("end", function() {
-                if (msg === "") {
-                    console.log("Empty reply from JEE webservice");
-                    //response.redirect("somewhere"); //TODO: page d'erreur?
-                    response.send(msg);
-                } else {
-                    if(msg.role === "admin"){
-                        response.redirect("/admin");
-                    } else {
-                        response.redirect("/watch");
-                    }
-                }
-            });
-        });
-
-        req.write(data);
-        req.end();
+        console.log(data);
+        console.log(data.login);
+        console.log(data["login"]);
+        if (data.login === "jul") {
+            console.log("did we even get here ?????????????");
+            ssn.role = "admin";
+        }
+        response.redirect("/admin");
+        // let req = http.request(options, function(res) {
+        //     let msg = "";
+        //     res.setEncoding("utf8");
+        //
+        //     res.on("data", function(chunk) {msg += chunk});
+        //
+        //     res.on("end", function() {
+        //         if (msg === "") {
+        //             console.log("Empty reply from JEE webservice");
+        //             //response.redirect("somewhere"); //TODO: page d'erreur?
+        //             response.send(msg);
+        //         } else {
+        //             ssn.role = msg.role;
+        //             if(msg.role === "admin"){
+        //                 response.redirect("/admin");
+        //             } else {
+        //                 response.redirect("/watch");
+        //             }
+        //         }
+        //     });
+        // });
+        //
+        // req.write(data);
+        // req.end();
     }
 }
 
