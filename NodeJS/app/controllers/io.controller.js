@@ -45,7 +45,7 @@ function LoadSlide () {
         lastSlide = res[presId]["slidArray"].length;
         let slideInfo = res[presId]["slidArray"][currentSlide - 1]; //indexes
 
-        ContentModel.read(slideInfo.id, function (err, content) {
+        ContentModel.read(slideInfo.content_id, function (err, content) {
             if (err) {console.log(err); return err;}
 
             for (let socketId in socketMap) {
@@ -64,7 +64,6 @@ function LoadSlide () {
 
 /** Determine next slide's id according to the given command */
 function HandleCMD (json_event) {
-    console.log("JE SUIS ICIII PUTAIN DE MERDE PUTEUUUU")
     console.log(json_event.CMD);
     let nextSlide = currentSlide;
 
