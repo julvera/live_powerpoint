@@ -123,10 +123,21 @@ class Utils {
                     //response.redirect("somewhere"); //TODO: page d'erreur?
                     response.send(msg);
                 } else {
+
+                    msg = JSON.parse(msg);
+
                     if(msg.role === "admin"){
+
                         response.redirect("/admin");
-                    } else {
+
+                    } else if (msg.role === "user"){
+
                         response.redirect("/watch");
+
+                    }
+                    else{
+
+                        response.redirect("/");
                     }
                 }
             });

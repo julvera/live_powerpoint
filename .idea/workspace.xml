@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcb77431-4757-4243-83ae-3582a78cb2a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E.ear" beforeDir="false" afterPath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E.ear" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/FrontAuthWatcherWebService.war" beforeDir="false" afterPath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/FrontAuthWatcherWebService.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/MiddleAuthWatcherEJB.jar" beforeDir="false" afterPath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/MiddleAuthWatcherEJB.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/WatcherAuthProject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/WatcherAuthProject.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/lib/MiddleAuthWatcherEJBClient.jar" beforeDir="false" afterPath="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/WatcherAuthJ2E/lib/MiddleAuthWatcherEJBClient.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NodeJS/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJS/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NodeJS/app/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJS/app/utils/utils.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthJ2E/target/" />
     <ignored path="$PROJECT_DIR$/JakartaEE/Projet/MiddleAuthWatcherEJB/target/" />
@@ -35,11 +29,12 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.41" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,7 +42,7 @@
           <entry key="html" value="3" />
           <entry key="iml" value="2" />
           <entry key="java" value="19" />
-          <entry key="js" value="7" />
+          <entry key="js" value="8" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
@@ -56,7 +51,7 @@
           <entry key="HTML" value="3" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="JAVA" value="19" />
-          <entry key="JavaScript" value="7" />
+          <entry key="JavaScript" value="8" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -64,25 +59,25 @@
         <counts>
           <entry key="html" value="211" />
           <entry key="java" value="455" />
-          <entry key="js" value="303" />
+          <entry key="js" value="425" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="211" />
           <entry key="JAVA" value="455" />
-          <entry key="JavaScript" value="303" />
+          <entry key="JavaScript" value="425" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NodeJS/app/routes/default.route.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -133,11 +128,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JakartaEE/Projet/FrontAuthWatcherWebService/src/main/java/fr/cpe/implementation/WatcherAuthServiceImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+            <state relative-caret-position="495">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NodeJS/app/utils/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
             </state>
           </provider>
         </entry>
@@ -162,6 +166,7 @@
       <find>getUserByLogin</find>
       <find>&quot;NONE&quot;</find>
       <find>/Login</find>
+      <find>/admin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,6 +186,7 @@
         <option value="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/AuthWatcherMessageDrivenEJB.java" />
         <option value="$PROJECT_DIR$/JakartaEE/Projet/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserDao.java" />
         <option value="$PROJECT_DIR$/NodeJS/public/index.html" />
+        <option value="$PROJECT_DIR$/NodeJS/app/utils/utils.js" />
       </list>
     </option>
   </component>
@@ -552,11 +558,12 @@
       <workItem from="1541691066238" duration="3264000" />
       <workItem from="1541860303514" duration="6663000" />
       <workItem from="1541870990024" duration="3684000" />
+      <workItem from="1541953032689" duration="1261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17703000" />
+    <option name="totallyTimeSpent" value="18964000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -569,8 +576,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986301" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25260273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -582,7 +590,7 @@
       <window_info id="Web" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49972603" visible="true" weight="0.3037433" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49972603" visible="true" weight="0.120855615" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -718,7 +726,7 @@
     <entry file="file://$PROJECT_DIR$/NodeJS/app/routes/default.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -758,8 +766,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JakartaEE/Projet/FrontAuthWatcherWebService/src/main/java/fr/cpe/implementation/WatcherAuthServiceImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        <state relative-caret-position="495">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NodeJS/app/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
         </state>
       </provider>
     </entry>
