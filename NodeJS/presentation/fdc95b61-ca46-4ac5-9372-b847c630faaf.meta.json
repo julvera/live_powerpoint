@@ -1,7 +1,13 @@
 {
-  "type":"video",
   "id":"fdc95b61-ca46-4ac5-9372-b847c630faaf",
-  "title":"test url",
-  "fileName":null,
-  "src":"https://www.youtube.com/watch?v=fAVCSU9vrvY"
+  "title":"nototo",
+  "description":"Welcome to this first présentation do you need some help?",
+  "slidArray":[
+    {
+    "type":"video",
+    "id":"fdc95b61-ca46-4ac5-9372-b847c630faaf",
+    "title":"test url",
+    "fileName":null,
+    "src":"https://www.youtube.com/watch?v=fAVCSU9vrvY"
+    }]
 }

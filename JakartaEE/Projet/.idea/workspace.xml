@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="WatcherAuthJ2E:ear" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="539872c5-b824-4c9a-897e-a3a752c3b1ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jboss_spec_javax_jms_jboss_jms_api_2_0_spec_1_0_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/WatcherAuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/implementation/WatcherAuthServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleAuthWatcherEJB/WHOAMI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/WatcherAuthServiceServerEJBImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/WHOAMI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/WatcherAuthServiceEJB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/src/main/application/META-INF/tp2real-ds.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/application.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/tp2real-ear.ear" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/tp2real-ear/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/tp2real-ear/META-INF/application.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/tp2real-ear/META-INF/tp2real-ds.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/tp2real-ear/lib/jaxrs-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/tp2real-ear/tp2real-ejb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/target/tp2real-ear/tp2real-web.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ear/tp2real-ear.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/src/main/java/FirstEJB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/src/main/java/FirstEJBImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/src/test/resources/META-INF/test-persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/src/test/resources/arquillian.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/src/test/resources/test-ds.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/classes/FirstEJB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/classes/FirstEJBImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/classes/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/test-classes/META-INF/test-persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/test-classes/arquillian.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/test-classes/test-ds.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/tp2real-ejb/FirstEJB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/tp2real-ejb/FirstEJBImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/tp2real-ejb/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/tp2real-ejb/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/target/tp2real-ejb/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-ejb/tp2real-ejb.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/src/main/java/FirstRestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/src/main/java/FirstRestServiceImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/src/main/java/JaxRSActivator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/classes/FirstRestService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/classes/FirstRestServiceImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/classes/JaxRSActivator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/WEB-INF/classes/FirstRestService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/WEB-INF/classes/FirstRestServiceImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/WEB-INF/classes/JaxRSActivator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/WEB-INF/faces-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/WEB-INF/lib/jaxrs-api-3.0.12.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/WEB-INF/lib/jboss-ejb-api_3.2_spec-1.0.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/target/tp2real-web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real-web/tp2real-web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tp2real.iml" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/MiddleAuthWatcherEJB/target/" />
+    <ignored path="$PROJECT_DIR$/FrontAuthWatcherWebService/target/" />
+    <ignored path="$PROJECT_DIR$/WatcherAuthProject/target/" />
+    <ignored path="$PROJECT_DIR$/WatcherAuthJ2E/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1113998764">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.opened" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="WHOAMI" value="2" />
+          <entry key="java" value="65" />
+          <entry key="pom" value="1" />
+          <entry key="txt" value="3" />
+          <entry key="xml" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="65" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="XML" value="26" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="WHOAMI" value="197" />
+          <entry key="dummy" value="28" />
+          <entry key="java" value="4361" />
+          <entry key="txt" value="181" />
+          <entry key="xml" value="234" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="4361" />
+          <entry key="PLAIN_TEXT" value="406" />
+          <entry key="XML" value="234" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/implementation/WatcherAuthServiceImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageReceiverSyncLocal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/WatcherAuthService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/JaxRsActivator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageReceiverSync.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-98">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageSenderQueue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WatcherAuthJ2E/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-197">
+              <caret line="60" column="57" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/UserModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserDaoInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>persistence.</find>
+      <find>it works</find>
+      <find>bijour</find>
+      <find>authValid</find>
+      <find>sender</find>
+      <find>@default</find>
+      <find>AuthWatcherMsgDrivenEJB</find>
+      <find>MessageSenderQueueLocal</find>
+      <find>Messagereceiversynclocal</find>
+      <find>\&lt;dependency\&gt;\n            \&lt;groupId\&gt;fr\.cpe\&lt;\/groupId\&gt;\n            \&lt;artifactId\&gt;WatcherAuthProject\&lt;\/artifactId\&gt;</find>
+      <find>chef</find>
+      <find>System\.out\.println\(\&quot;\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* Message Sender Queue EJB \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\&quot;\)\;\n</find>
+      <find>private static final long serialVersionUID = 1L;</find>
+      <find>seri</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/implementation/WatcherAuthService.java" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/WatcherAuthService.java" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/implementation/WatcherAuthServiceImplementation.java" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/WatcherAuthServiceImplementation.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthJ2E/target/application.xml" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/WHOAMI" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/WHOAMI" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/WatcherAuthServiceServerEJB.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/WatcherAuthServiceServerEJB.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/WatcherAuthServiceServerEJBImplementation.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/WHOAMI" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/WatcherAuthServiceServerEJB.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthJ2E/pom.xml" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/JaxRSActivator.java" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/JaxRsActivator.java" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/UserModel.java" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/WatcherAuthService.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/WatcherAuthServiceEJB.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/pom.xml" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageSenderLocal.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageReceiverSync.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/WatcherAuthServiceServerEJBImplementation.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/model/DataContainer.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageSenderQueueLocal.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/AuthWatcherMsgDrivenEJB.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/pom.xml" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/AuthWatcherMsgDrivenEJB.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/AuthWatcherMessageDrivenEJB1.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageReceiverSyncLocal.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageSenderQueue.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageSender.java" />
+        <option value="$PROJECT_DIR$/questionReponse.txt" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/UserDao.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/Role.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/pom.xml" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserModelDB.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/UserDaoInterface.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/UserModelDB.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserDaoInterface.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/UserModel.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/Model/DataContainer.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserDao.java" />
+        <option value="$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/AuthWatcherMessageDrivenEJB.java" />
+        <option value="$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageReceiverSync.java" />
+        <option value="$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/implementation/WatcherAuthServiceImplementation.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="lookForNested" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Projet: EAR Module (WatcherAuthJ2E)" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Projet: EAR Module (WatcherAuthJ2E)" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="985" />
+    <option name="y" value="25" />
+    <option name="width" value="935" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontAuthWatcherWebService" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontAuthWatcherWebService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontAuthWatcherWebService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontAuthWatcherWebService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontAuthWatcherWebService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cpe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontAuthWatcherWebService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cpe" type="462c0819:PsiDirectoryNode" />
+              <item name="implementation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cpe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJBClient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJBClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJBClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJBClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="MiddleAuthWatcherEJBClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cpe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthJ2E" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="EJB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet" type="462c0819:PsiDirectoryNode" />
+              <item name="WatcherAuthProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="persistence&#9;FILE&#9;file:///home/cpe/Documents/live_powerpoint/JakartaEE/Projet/MiddleAuthWatcherEJBClient/src/main/resources/META-INF/persistence.xml" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540566942365" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fr.cpe.Model.EJB" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="fr.cpe" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+      <recent name="implementation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MiddleAuthWatcherEJB" />
+      <recent name="$PROJECT_DIR$/MiddleAuthWatcherEJBClient" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="WildFly" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 14.0.1.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="WatcherAuthJ2E:ear">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="main-server-group" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="42053" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="false" />
+          <option name="SCRIPT" value="/opt/cpe/wildfly-14.0.1.Final/bin/standalone.sh" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="-c standalone-full.xml" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="false" />
+          <option name="SCRIPT" value="/opt/cpe/wildfly-14.0.1.Final/bin/standalone.sh" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="-c standalone-full.xml" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="WatcherAuthJ2E:ear" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="539872c5-b824-4c9a-897e-a3a752c3b1ce" name="Default Changelist" comment="" />
+      <created>1539958658322</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539958658322</updated>
+      <workItem from="1539958661981" duration="4952000" />
+      <workItem from="1540361479286" duration="6079000" />
+      <workItem from="1540370381143" duration="5626000" />
+      <workItem from="1540381270700" duration="12783000" />
+      <workItem from="1540534531581" duration="11361000" />
+      <workItem from="1540554029943" duration="10508000" />
+      <workItem from="1541422163914" duration="2386000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="53695000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="EJB" order="7" side_tool="true" />
+      <window_info id="JavaEE:App" order="8" side_tool="true" />
+      <window_info id="Web" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2342246" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32941177" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32941177" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="CDI" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.329863" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.10958904" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19068493" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="EJB" order="7" side_tool="true" />
+      <window_info id="JavaEE:App" order="8" side_tool="true" />
+      <window_info id="Web" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47165775" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32941177" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32941177" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="CDI" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.71561646" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthJ2E/target/application.xml" />
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/WHOAMI">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="69" selection-start-column="69" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/test/resources/test-ds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/test/resources/META-INF/test-persistence.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontAuthWatcherWebService/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-593" />
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/wildfly/bom/jboss-javaee-7.0-with-tools/8.2.1.Final/jboss-javaee-7.0-with-tools-8.2.1.Final.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/WHOAMI">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageReceiverSync.java" />
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageSenderLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="46" column="26" selection-start-line="46" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageSenderQueueLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/questionReponse.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthProject/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="53" selection-start-line="53" selection-end-line="57" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/UserModelDB.java" />
+    <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/AuthWatcherMessageDrivenEJB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/Model/DataContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/WatcherAuthServiceEJB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/WatcherAuthServiceServerEJBImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" selection-start-line="19" selection-start-column="6" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthProject/src/main/java/fr/cpe/Model/EJB/UserDaoInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatcherAuthJ2E/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="60" column="57" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/WatcherAuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/JaxRsActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageSenderQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJBClient/src/main/java/fr/cpe/MessageReceiverSyncLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiddleAuthWatcherEJB/src/main/java/fr/cpe/MessageReceiverSync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontAuthWatcherWebService/src/main/java/fr/cpe/implementation/WatcherAuthServiceImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

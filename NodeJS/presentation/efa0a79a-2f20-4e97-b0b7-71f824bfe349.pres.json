@@ -4,36 +4,28 @@
   "description":"Welcome to this first présentation do you need some help?",
   "slidArray":[
     {
-      "id":"62cf58dd-ecb1-495a-899c-b7c633fa1df7",
+      "id":"Id_Slide1",
       "title":"slid1 - baxter data for ever",
-      "txt":"The majority of sources for Odysseus' pre-war exploits—principally the mythographers Pseudo-Apollodorus and Hyginus—postdate Homer by many centuries. Two stories in particular are well known: When Helen was abducted, Menelaus called upon the other suitors to honour their oaths and help him to retrieve her, an attempt that would lead to the Trojan War.  TT",
-      "contentMap":{
-        "1":"37ba76b1-5c5d-47ef-8350-f4ea9407276d"
-      }
+      "txt":"esfefs",
+      "content_id":"62cf58dd-ecb1-495a-899c-b7c633fa1df7"
     },
     {
-      "id":"d4c257c5-7c67-46dc-bcf5-3c896bcd57f7",
+      "id":"Id_Slide2",
       "title":"slid2 -0123465679",
       "txt":"nothing to docvwcxv",
-      "contentMap":{
-        "1":"5095753f-14ca-4c1d-9236-52686ce9af4d"
-      }
+      "content_id":"e336147f-e6e1-42a7-9766-e9a9dc34ceef"
     },
     {
-      "id":"ece434fe-9e86-4231-ae1d-3236e2d3e415",
+      "id":"Id_Slide3",
       "title":"info about the world",
       "txt":"yesy some text here",
-      "contentMap":{
-        "1":"b4f0d8a7-aeaa-4f9b-abae-8f3187969b09"
-      }
+      "content_id":"e336147f-e6e1-42a7-9766-e9a9dc34ceef"
     },
     {
-      "id":"fdc95b61-ca46-4ac5-9372-b847c630faaf",
+      "id":"Id_Slide4",
       "title":"More than a simple presenter",
       "txt":"This is a EC Stratocaster",
-      "contentMap":{
-        "1":"d6aad8cd-b3dc-4794-9e2e-efee903a3f5e"
-      }
+      "content_id":"62cf58dd-ecb1-495a-899c-b7c633fa1df7"
     }
   ]
 }

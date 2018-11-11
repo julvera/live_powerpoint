@@ -7,8 +7,7 @@
     <body>
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
-        <h1>Watch page</h1>
-        <h2>Content</h2>
+        <h1 id="h1"></h1>
         <p id="title"></p>
         <p id="description"></p>
         <p id="content_title"></p>
@@ -23,21 +22,39 @@
             });
 
             socket.on("currentSlidEvent", function (content) {
+                document.getElementById("h1").innerText = "Watch page";
                 document.getElementById("title").innerHTML = content.title;
                 document.getElementById("content_title").innerHTML = content.content_title;
                 document.getElementById("description").innerHTML = content.description;
 
                 let imageElement = document.getElementById("image");
                 let videoElement = document.getElementById("video");
-                if(content.content_type === "img"){
+                if (content.content_type === "img") {
                     imageElement.setAttribute("src", content.content_src);
                     videoElement.setAttribute("src", "");
-                }
-                else{
+                } else {
                     videoElement.setAttribute("src", content.content_src);
                     imageElement.setAttribute("src", "");
                 }
             });
+
+            // Because quotes are fun
+            const quotes = [
+                "\"The two hardest tests on the spiritual road are the patience to wait for the right moment and the courage not to be disappointed with what we encounter.\" – Paulo Coelho",
+                "\"Without patience, you will never conquer endurance.\" - Yiannis Kouros",
+                "\"I will not deny but that the best apology against false accusers is silence and sufferance, and honest deeds set against dishonest words.\" – John Milton",
+                "\"There are times to stay put, and what you want will come to you, and there are times to go out into the world and find such a thing for yourself.\" – Lemony Snicket",
+                "\"The world is full of magical things patiently waiting for our wits to grow sharper.\" – Bertrand Russell",
+                "\"Spending coding time promoting manual behaviors goes against my religion.\" - Bertand Janin",
+                "\"Adopt the pace of nature: her secret is patience.\" - Ralph Waldo Emerson",
+                "\"Patience is the companion of wisdom.\" - St. Augustine",
+                "\"How poor are they that have no patience! What wound did ever heal but by degrees?\" - William Shakespeare",
+                "\"Patience is not just about waiting for something… it’s about how you wait, or your attitude while waiting.\" - Joyce Meyer"
+            ];
+            let random_num = Math.floor(Math.random() * quotes.length);
+            document.getElementById("h1").innerText = "Waiting page";
+            document.getElementById("description").innerHTML = quotes[random_num];
+
         </script>
     </body>
 </html>

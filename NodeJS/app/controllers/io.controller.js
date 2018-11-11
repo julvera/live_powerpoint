@@ -15,22 +15,15 @@ let doLoad;
 class IOController {
 
     static listen (server) {
-        console.log("io.controller.listen");
-
         const io = require("socket.io").listen(server);
         io.sockets.on("connection", function (socket) {
             socket.on("data_comm", function (id) {
-                console.log("io.controller.data_comm");
                 socketMap[id] = socket;
                 console.log("New watcher: " + id);
             });
 
             socket.on("slidEvent", function (json_event) {
-                console.log("io.controller.slidEvent");
-
                 currentSlide = HandleCMD(json_event);
-
-                console.log("presId: " + presId);
                 if(presId !== undefined && doLoad) {
                     LoadSlide();
                 }

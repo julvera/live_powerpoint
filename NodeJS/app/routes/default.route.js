@@ -1,10 +1,11 @@
 "use strict";
 
 const express = require("express");
+const Utils = require("../utils/utils");
 const router = express.Router();
+
 module.exports = router;
 
-router.route("/")
-    .get(function(req, res) {
-        res.send("It Works!");
-    });
+
+router.route("/login")
+    .post(Utils.verify_login);
