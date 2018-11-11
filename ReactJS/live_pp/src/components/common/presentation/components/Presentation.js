@@ -27,7 +27,7 @@ class Presentation extends Component {
     render() {
         let display_result = [];
         if(this.props.displayMode === "FULL_MNG"){
-            display_result.push(<EditPresSlide key={this.props.id} 
+            display_result.push(<EditPresSlide key={"EditPresSlide"+this.props.presentation.id} 
                                 handleChangeTitle={this.handleChangeTitle} 
                                 handleChangeDescription={this.handleChangeDescription}
                                 title={this.props.presentation.title}
@@ -39,7 +39,9 @@ class Presentation extends Component {
                 <div>
                     {display_result}
                 </div>
-               <PresentationVisual title={this.props.presentation.title} 
+               <PresentationVisual  key={"EditPresSlide"+this.props.presentation.id}
+                                id={this.props.presentation.id}
+                                title={this.props.presentation.title} 
                                 description={this.props.presentation.description}
                                 slidArray={this.props.presentation.slidArray}/>
             </div>

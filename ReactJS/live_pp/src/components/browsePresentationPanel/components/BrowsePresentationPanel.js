@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Presentation from '../../common/presentation/components/Presentation.js'
+import CommandButton from './CommandButtons'
+
 import './BrowsePresentationPanel.css'
 
 class BrowsePResentationPanel extends Component {
@@ -14,7 +16,10 @@ class BrowsePResentationPanel extends Component {
         
         return (
             <div>
-               <Presentation displayMode={"FULL_MNG"}/>
+                <div>
+                    <CommandButton/>
+                    <Presentation displayMode={"FULL_MNG"}/>
+                </div>
             </div>
         );
     }

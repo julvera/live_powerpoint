@@ -3,7 +3,9 @@ import './EditMetaSlid.css'
 
 export default class EditMetaSlid extends React.Component{
     constructor(props) {
-    super(props);
+        super(props);
+        this.stage = {
+        }
     }
     render(){
         return (

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ContentLabel from './ContentLabel';
+import { connect } from 'react-redux';
+import {updateDraggedElt} from '../../../../actions'
 
 class ContentVisual extends Component {
     constructor(props) {
@@ -15,32 +17,30 @@ class ContentVisual extends Component {
             case "img":
             case "img_url":
                 return (
-                    <img src={this.props.content.src}/>
+                    <img src={this.props.content.src} alt="Slid Img"/>
                 );
             case "video":
                 return (
-                    <object data={this.props.content.src}/>
+                    <object data={this.props.content.src} aria-label="Slid Video"/>
                 );
             case "web":
                 return(
-                    <iframe src={this.props.content.src}/>
+                    <iframe src={this.props.content.src} title="Slid WebPage"/>
                 );
             default:
                 return(<div></div>);
         }
     }
 
-    drag(ev,content) {
-        console.log("is content")
-        console.log(content)
-        ev.dataTransfer.setData("text", content.id);
+    drag(content) {
+        this.props.dispatch(updateDraggedElt(content.id));
     }
     
     render() {
         let display_visual = this.visualTypeProcessing();
         return (
             <div>
-                <div className="contentVisual" draggable="true" onDragStart={(ev) => this.drag(ev,this.props.content)}>
+                <div className="contentVisual" draggable="true" onDragStart={() => this.drag(this.props.content)}>
                     {display_visual}
                 </div>
                 <ContentLabel
@@ -53,4 +53,4 @@ class ContentVisual extends Component {
     }
 }
 
-export default ContentVisual;
+export default connect() (ContentVisual);

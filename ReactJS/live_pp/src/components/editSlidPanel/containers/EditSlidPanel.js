@@ -13,7 +13,7 @@ class EditSlidPanel extends Component {
 
     getRender(){
         let array_render=[];
-        if (this.props.selected_slid.id == undefined)
+        if (this.props.selected_slid.id === undefined)
             return ;
         array_render.push(
                 <Slid key={"EditSlidePanel_Slide "+ this.props.selected_slid.id}
@@ -40,7 +40,7 @@ class EditSlidPanel extends Component {
 const mapStateToProps = (state, ownProps) => {
     let mySelectedSlid ={}
     for(let slidTpm in state.updateModelReducer.presentation.slidArray){
-        if(state.updateModelReducer.presentation.slidArray[slidTpm].id == state.selectedReducer.slid.id){
+        if(state.updateModelReducer.presentation.slidArray[slidTpm].id === state.selectedReducer.slid.id){
             mySelectedSlid = state.updateModelReducer.presentation.slidArray[slidTpm];
             break;
         }

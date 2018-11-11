@@ -26,7 +26,7 @@ class Slid extends Component {
                     title:title,
                     txt:txt,
                     content_id:content_id};
-       this.props.dispatch(updateSlid(tmpSlid));
+       this.props.dispatch(updateSlid("Update",tmpSlid));
     }
 
     handleChangeTitle(e){   
@@ -49,19 +49,14 @@ class Slid extends Component {
         ev.preventDefault();
     }
     
-    drop(ev) {
-        var data = ev.dataTransfer.getData("text");
-        console.log("Data is : ");
-        console.log(data);
-        console.log("Content is : ");
-        console.log(this.props.content_id);
-        this.updateCurrentSlid(this.props.id, this.props.title, this.props.txt, data); 
+    drop() {
+        this.updateCurrentSlid(this.props.slid.id, this.props.slid.title, this.props.slid.txt, this.props.slid.content_id); 
     }
 
     render() {
 
         let display_result = [];
-        if(this.props.displayMode == "FULL_MNG"){
+        if(this.props.displayMode === "FULL_MNG"){
             display_result.push(<EditMetaSlid key={this.props.id} 
                                 handleChangeTitle={this.handleChangeTitle} 
                                 handleChangeTxt={this.handleChangeTxt}
@@ -77,7 +72,7 @@ class Slid extends Component {
                 <div>
                     {this.props.txt}
                 </div>
-                <div  onDragOver={(ev) => this.allowDrop(ev)} onDrop={(ev) => this.drop(ev)}>
+                <div  onDragOver={(ev) => this.allowDrop(ev)} onDrop={() => this.drop()}>
                      <Content key={"Slid"+this.props.content_id} 
                             content={this.props.content_map[this.props.content_id]} 
                             displayContentMode={"TypeOnly"}/>
@@ -93,6 +88,7 @@ class Slid extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         content_map: state.updateModelReducer.content_map,
+        slid: state.selectedReducer.slid,
     } };
 
 export default connect(mapStateToProps)(Slid);

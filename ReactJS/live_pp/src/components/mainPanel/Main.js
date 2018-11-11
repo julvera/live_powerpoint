@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css';
 import './main.css';
 
@@ -8,9 +8,10 @@ import BrowsePresentationPanel from '../browsePresentationPanel/components/Brows
 import Comm from '../../services/Comm';
 
 //import needed to use redux with react.js
+import { connect } from 'react-redux';
 import { createStore } from 'redux';
 import myReducers from '../../reducers'
-import {updateContentMap,updatePresentation} from '../../actions';
+import {updateContentMap,updatePresentation, sendNavCmd} from '../../actions';
 
 import { Provider } from 'react-redux';
 
@@ -20,12 +21,42 @@ import * as presJson from '../../data/pres.json'
 
 const store = createStore(myReducers);
 
-export default class Main extends React.Component{
+class Main extends Component{
 	constructor(props) {
 		super(props);
-		store.dispatch(updateContentMap(contentJson));
-		store.dispatch(updatePresentation(presJson));
+		
 
+		this.comm = new Comm()
+		this.state = {
+			contentMap:contentJson,
+			current_pres:presJson,
+		}
+
+		this.loadContentUpdate=this.loadContentUpdate.bind(this);
+		this.loadPresUpdate=this.loadPresUpdate.bind(this);
+		this.callbackErr =this.callbackErr.bind(this);
+		
+		//FIRST ACTIONS
+		// try to load the contentMap from the server
+		this.comm.loadContent(this.loadContentUpdate,this.callbackErr);
+		// try to load the presentation from the server
+		this.comm.loadPres(0,this.loadPresUpdate,this.callbackErr);
+		// create the sokect connection between the server and the web browser
+		this.comm.socketConnection(this.state.uuid);
+
+		store.subscribe(() => {
+			this.setState({presentation:store.getState().updateModelReducer.presentation});
+			this.setState({contentMap:store.getState().updateModelReducer.content_map});
+			if(store.getState().commandReducer.cmdPres == 'SAVE_CMD'){
+				console.log('callingSave')
+				this.comm.savPres(store.getState().updateModelReducer.presentation,this.callbackErr);
+				console.log("reset cmd");
+				store.dispatch(sendNavCmd(""));
+			}
+		});
+
+		
+ 
 
 		/*
 		var comm = new Comm()
@@ -56,16 +87,22 @@ export default class Main extends React.Component{
 		});*/
 	
 	}
-	
+	loadContentUpdate(data){
+		//send action to the store for update the current contentMap
+		store.dispatch(updateContentMap(data));
+	}
+	   
+	loadPresUpdate(data){
+		//send action to the store for update the current presentation
+		store.dispatch(updatePresentation(data));
+	}
+	   
+	callbackErr(msg){
+		console.error('Network Failure ?');
+		console.error(msg);
+	}
+	   
 	render() {		
-		/*
-		<button onclick="comm.play()">Start</button>
-				<button onclick="comm.end()">End</button>
-				<button onclick="comm.pause()">Pause</button>
-				<button onclick="comm.begin()">Begin</button>
-				<button onclick="comm.backward()">Prev</button>
-				<button onclick="comm.forward()">Next</button>
-				*/
  		return (
 			<Provider store={store}>
 			<div className='container-fluid height-100'>
@@ -85,6 +122,8 @@ export default class Main extends React.Component{
 		);
 	}
 }
+
+export default Main;
 
 
 

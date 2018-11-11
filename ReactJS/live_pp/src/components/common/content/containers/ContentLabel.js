@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 class ContentLabel extends Component {
     constructor(props) {
         super(props);
+        this.stage = {
+        }
     }
 
     render() {
         let display_info;
         if(this.props.displayContentMode === "FULL"){
-            display_info = (<div className = "thumbnail">ID : {this.props.id}  Title: {this.props.title}</div>)
+            display_info = (<div>ID : {this.props.id}  Title: {this.props.title}</div>)
         }
         return (
             <div>

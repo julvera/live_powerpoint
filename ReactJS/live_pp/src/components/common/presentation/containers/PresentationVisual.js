@@ -5,14 +5,11 @@ class PresentationVisual extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: this.props.id,
-            title: this.props.title,
-            description: this.props.description,
-            slidArray: this.props.slidArray,
         }
     }
 
-    render() {        
+    
+    render() {     
         return (
             <div>
                 <h3>Titre</h3> 

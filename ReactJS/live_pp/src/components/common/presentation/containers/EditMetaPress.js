@@ -2,7 +2,9 @@ import React from 'react';
 
 export default class EditMetaPress extends React.Component{
     constructor(props) {
-    super(props);
+        super(props);
+        this.stage = {
+        }
     }
     render(){
         return (
